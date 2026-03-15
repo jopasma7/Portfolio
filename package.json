@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-tailwind",
+  "version": "1.0.0",
+  "description": "Portfolio personal con Tailwind CSS",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
+}

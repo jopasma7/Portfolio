@@ -4,600 +4,611 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Alejandro</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Tailwind CSS generado -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script>
-    // Tema oscuro/claro
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light-theme');
-    }
-  </script>
+  <!-- JavaScript movido a archivo externo para optimización -->
+  <script src="assets/js/main.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
 </head>
-<body>
-  <div style="position:fixed;top:18px;right:30px;z-index:3000;display:flex;align-items:center;gap:1.2em;user-select:none;min-width:320px;">
-    <div id="lang-dropdown" style="position:relative;">
-      <div id="lang-selected" style="display:flex;align-items:center;gap:0.4em;background:none;border:none;color:var(--primary);font-size:1.15rem;cursor:pointer;padding:0.2em 0.7em 0.2em 0.2em;border-radius:6px;outline:none;">
-        <img id="lang-selected-flag" src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" style="display:inline-block;vertical-align:middle;"> 
-        <span id="lang-selected-label">Español</span>
-        <span style="font-size:0.9em;">▼</span>
+<body class="bg-[#f8fafc] dark:bg-[#0a192f] transition-colors duration-300">
+    <!-- Fondo Matrix animado -->
+    <canvas id="matrix-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:0.18;"></canvas>
+  <style>
+                        /* Ajuste para que el canvas Matrix no tape el contenido */
+                        #matrix-bg {
+                          position: fixed;
+                          top: 0;
+                          left: 0;
+                          width: 100vw;
+                          height: 100vh;
+                          z-index: 0;
+                          pointer-events: none;
+                          opacity: 0.18;
+                          transition: background 0.3s;
+                        }
+                        body, #app, main, .main-content, .container, .content {
+                          position: relative;
+                          z-index: 1;
+                        }
+
+                    /* Colores del sidebar móvil igual que escritorio */
+                    @media (max-width: 700px) {
+                      #mobile-sidebar {
+                        background: #f8fafc !important;
+                        color: #0a192f !important;
+                      }
+                      body.dark #mobile-sidebar {
+                        background: #112240 !important;
+                        color: #ccd6f6 !important;
+                      }
+                      #mobile-sidebar .sidebar-name {
+                        color: #003380 !important;
+                      }
+                      body.dark #mobile-sidebar .sidebar-name {
+                        color: #64ffda !important;
+                      }
+                      #mobile-sidebar .sidebar-role {
+                        color: #64748b !important;
+                      }
+                      body.dark #mobile-sidebar .sidebar-role {
+                        color: #8892b0 !important;
+                      }
+                      #mobile-sidebar a, #mobile-sidebar li, #mobile-sidebar span, #mobile-sidebar button {
+                        color: #0a192f !important;
+                      }
+                      body.dark #mobile-sidebar a, body.dark #mobile-sidebar li, body.dark #mobile-sidebar span, body.dark #mobile-sidebar button {
+                        color: #ccd6f6 !important;
+                      }
+                      #mobile-sidebar .sidebar-social svg {
+                        color: #0a192f !important;
+                      }
+                      body.dark #mobile-sidebar .sidebar-social svg {
+                        color: #ccd6f6 !important;
+                      }
+                    }
+                /* Sidebar móvil compacto y profesional */
+                @media (max-width: 700px) {
+                  #mobile-sidebar {
+                    width: 85vw !important;
+                    max-width: 320px !important;
+                    min-width: 0 !important;
+                    padding: 1.2rem 0.7rem !important;
+                    gap: 1.1rem !important;
+                  }
+                  #mobile-sidebar .sidebar-name {
+                    font-size: 1.08rem !important;
+                    font-weight: 900 !important;
+                    margin-bottom: 0.2em !important;
+                    text-align: left !important;
+                  }
+                  #mobile-sidebar .sidebar-role {
+                    font-size: 0.93rem !important;
+                    line-height: 1.3 !important;
+                    margin-bottom: 0.7em !important;
+                    text-align: left !important;
+                  }
+                  #mobile-sidebar #mobile-controls {
+                    gap: 0.7em !important;
+                    margin-bottom: 0.7em !important;
+                  }
+                  #mobile-sidebar ul {
+                    gap: 1.1rem !important;
+                  }
+                  #mobile-sidebar li a {
+                    font-size: 1.01rem !important;
+                    padding: 0.2em 0.1em !important;
+                  }
+                  #mobile-sidebar .sidebar-social {
+                    margin-top: 1.1rem !important;
+                    gap: 0.7rem !important;
+                  }
+                  #mobile-sidebar .sidebar-social svg {
+                    width: 22px !important;
+                    height: 22px !important;
+                  }
+                  #close-mobile-sidebar {
+                    font-size: 1.5rem !important;
+                    top: 10px !important;
+                    right: 10px !important;
+                  }
+                }
+            @media (max-width: 600px) {
+              #edu-desc, #formacion .section p, #formacion .section li {
+                font-size: 0.91rem !important;
+                line-height: 1.35 !important;
+              }
+            }
+        @media (max-width: 600px) {
+          .gradient-title {
+            font-size: 1.5rem !important;
+          }
+        }
+    body, html {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.08rem;
+      letter-spacing: 0.01em;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+      letter-spacing: 0.01em;
+      font-weight: 900;
+    }
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.4em;
+    }
+    h3, h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.3em;
+    }
+    .section p, .section li, .section span, .section a, .section div, .section ul {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.7;
+    }
+    .font-display {
+      font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .gradient-title {
+      background: linear-gradient(90deg, #003380 0%, #005ae2 60%, #64ffda 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* text-fill-color: transparent; */
+      display: inline-block;
+    }
+    @media (max-width: 600px) {
+      body, html {
+        font-size: 0.97rem;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.3em;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin-bottom: 0.25em;
+      }
+      h3, h4 {
+        font-size: 0.98rem;
+        margin-bottom: 0.18em;
+      }
+      .gradient-title {
+        font-size: 1.1rem !important;
+      }
+      .section {
+        padding-top: 1.2rem !important;
+        padding-bottom: 1.2rem !important;
+      }
+      .section > * {
+        margin-bottom: 0.7rem !important;
+      }
+      .card-compact {
+        font-size: 0.89rem !important;
+        padding: 0.55rem !important;
+        margin-bottom: 0.7rem !important;
+      }
+      .card-compact h4 {
+        font-size: 0.97rem !important;
+      }
+      .sidebar-name, .sidebar-role {
+        font-size: 1rem !important;
+      }
+      .sidebar-social svg {
+        width: 20px !important;
+        height: 20px !important;
+      }
+      .flex, .flex-col, .flex-wrap {
+        gap: 0.7rem !important;
+      }
+      .p-6, .p-8 {
+        padding: 1rem !important;
+      }
+      .max-w-4xl, .max-w-xs {
+        max-width: 98vw !important;
+      }
+      /* .min-w-[220px] { min-width: 0 !important; }  Eliminado: selector inválido para CSS puro */
+      .mb-2, .mb-4, .mb-6, .mb-8, .mt-4, .mt-8, .mt-10 {
+        margin-bottom: 0.7rem !important;
+        margin-top: 0.7rem !important;
+      }
+      .py-6, .pt-12, .pb-10, .pt-16 {
+        padding-top: 0.7rem !important;
+        padding-bottom: 0.7rem !important;
+      }
+      .rounded-lg, .rounded-md {
+        border-radius: 0.4rem !important;
+      }
+      .shadow-md, .shadow-lg, .shadow-xl {
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.07) !important;
+      }
+      .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl {
+        font-size: 1rem !important;
+      }
+      .text-xs {
+        font-size: 0.85rem !important;
+      }
+      .sidebar-controls, #mobile-controls {
+        gap: 0.5em !important;
+      }
+      .sidebar-social {
+        gap: 0.7rem !important;
+      }
+      .w-20, .h-20 {
+        width: 3.2rem !important;
+        height: 3.2rem !important;
+      }
+      .rounded-full {
+        border-radius: 1.2rem !important;
+      }
+      .p-3, .p-5 {
+        padding: 0.55rem !important;
+      }
+      .gap-6, .gap-8, .gap-4 {
+        gap: 0.7rem !important;
+      }
+      .leading-relaxed {
+        line-height: 1.45 !important;
+      }
+    } /* <- cierre correcto de la media query */
+  </style>
+
+    <script>
+      // Matrix background animation
+      function startMatrixBg() {
+        const canvas = document.getElementById('matrix-bg');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+        // Characters to use
+        const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 18;
+        const columns = Math.floor(width / fontSize);
+        const drops = Array(columns).fill(1);
+        function draw() {
+          // Fondo semitransparente para efecto de "desvanecimiento"
+          ctx.fillStyle = (document.body.classList.contains('dark')) ? 'rgba(10,25,47,0.18)' : 'rgba(248,250,252,0.18)';
+          ctx.fillRect(0, 0, width, height);
+          ctx.font = fontSize + 'px monospace';
+          ctx.fillStyle = (document.body.classList.contains('dark')) ? '#64ffda' : '#003380';
+          for (let i = 0; i < drops.length; i++) {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            drops[i]++;
+          }
+        }
+        let interval = setInterval(draw, 50);
+        // Redimensionar
+        window.addEventListener('resize', () => {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          canvas.width = width;
+          canvas.height = height;
+        });
+        // Cambiar color en modo oscuro/claro
+        const observer = new MutationObserver(() => {
+          ctx.clearRect(0, 0, width, height);
+        });
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+      }
+      window.addEventListener('DOMContentLoaded', startMatrixBg);
+    </script>
+  <button id="hamburger-menu" aria-label="Abrir menú" style="position:fixed;top:18px;left:18px;z-index:3100;display:none;background:none;border:none;font-size:2rem;color:var(--primary);cursor:pointer;align-items:center;justify-content:center;">
+    <i class="fas fa-bars"></i>
+  </button>
+  <nav id="mobile-sidebar" style="display:none;position:fixed;top:0;left:0;width:75vw;max-width:320px;height:100vh;background:var(--sidebar,#112240);box-shadow:2px 0 16px rgba(0,0,0,0.18);z-index:3200;flex-direction:column;padding:2.5rem 1.2rem;gap:2rem;transition:transform 0.25s;transform:translateX(-100%);">
+      <button id="close-mobile-sidebar" aria-label="Cerrar menú" style="background:none;border:none;font-size:2rem;color:var(--primary);position:absolute;top:18px;right:18px;cursor:pointer;"><i class="fas fa-times"></i></button>
+      <div style="display:flex;flex-direction:column;align-items:center;width:100%;gap:0.7em;margin-top:0.5em;">
+        <img src="assets/img/avatar.jpeg" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-[#003380] dark:border-[#64ffda] shadow-lg" style="width:4.5rem;height:4.5rem;object-fit:cover;border-radius:1.2rem;border-width:2px;">
+        <div class="sidebar-name" style="font-size:1.18rem;font-weight:900;text-align:center;margin-top:0.3em;">Alejandro Pastor</div>
+        <div class="sidebar-role" style="font-size:0.97rem;line-height:1.3;text-align:center;margin-bottom:0.7em;">Ingeniero en Software | Especialista en Desarrollo de Soluciones Tecnológicas</div>
       </div>
-      <div id="lang-options" style="display:none;position:absolute;top:2.1em;left:0;background:var(--background,#232f45);border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.12);overflow:hidden;min-width:140px;z-index:3100;">
-        <div class="lang-option" data-lang="es" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;color:var(--primary);background:none;font-size:1.08rem;">
-          <img src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" style="display:inline-block;vertical-align:middle;"> <span>Español</span>
+      <ul style="list-style:none;padding:0;margin:1.2em 0 1.2em 0;display:flex;flex-direction:column;gap:1.2em;align-items:center;width:100%;">
+        <li><a href="#inicio" style="font-weight:700;">Inicio</a></li>
+        <li><a href="#experiencia" style="font-weight:700;">Experiencia</a></li>
+        <li><a href="#formacion" style="font-weight:700;">Formación</a></li>
+      </ul>
+      <div id="mobile-controls" style="display:flex;flex-direction:column;align-items:center;gap:0.7em;margin-bottom:1.2em;width:100%;">
+        <div id="lang-dropdown-mobile" style="position:relative;">
+          <div id="lang-selected-mobile" style="display:flex;align-items:center;gap:0.4em;background:none;border:none;color:var(--primary);font-size:1.15rem;cursor:pointer;padding:0.2em 0.7em 0.2em 0.2em;border-radius:6px;outline:none;">
+            <img id="lang-selected-flag-mobile" src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" style="display:inline-block;vertical-align:middle;"> 
+            <span id="lang-selected-label-mobile">Español</span>
+            <span style="font-size:0.9em;">▼</span>
+          </div>
+          <div id="lang-options-mobile" style="display:none;position:absolute;top:2.1em;left:0;background:var(--background,#232f45);border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.12);overflow:hidden;min-width:140px;z-index:3100;">
+            <div class="lang-option-mobile" data-lang="es" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;color:var(--primary);background:none;font-size:1.08rem;">
+              <img src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" style="display:inline-block;vertical-align:middle;"> <span>Español</span>
+            </div>
+            <div class="lang-option-mobile" data-lang="en" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;color:var(--primary);background:none;font-size:1.08rem;">
+              <img src="https://flagcdn.com/w20/gb.png" width="20" height="14" alt="English" style="display:inline-block;vertical-align:middle;"> <span>English</span>
+            </div>
+          </div>
         </div>
-        <div class="lang-option" data-lang="en" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;color:var(--primary);background:none;font-size:1.08rem;">
-          <img src="https://flagcdn.com/w20/gb.png" width="20" height="14" alt="English" style="display:inline-block;vertical-align:middle;"> <span>English</span>
+        <button id="theme-toggle-mobile" title="Cambiar tema" style="display:flex;align-items:center;gap:0.4em;background:none;border:none;color:var(--primary);font-size:1.15rem;cursor:pointer;padding:0.2em 0.7em 0.2em 0.2em;border-radius:6px;outline:none;">
+          <span id="theme-label-mobile">Modo Oscuro</span><i class="fas fa-moon"></i>
+        </button>
+      </div>
+      <div class="sidebar-social" style="margin-top:0.7em;display:flex;gap:1.2rem;justify-content:center;width:100%;">
+        <a href="https://www.linkedin.com/in/alejandro-pastor-3761043a9/" title="LinkedIn" target="_blank"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+        <a href="https://github.com/jopasma7" title="GitHub" target="_blank"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="https://wa.me/34683132931" title="WhatsApp" target="_blank"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.617h-.001a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.455 4.436-9.89 9.893-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.896 6.994c-.003 5.456-4.438 9.891-9.893 9.891m8.413-18.306a11.815 11.815 0 0 0-8.413-3.49c-6.627 0-12 5.373-12 12 0 2.121.555 4.199 1.607 6.032l-1.693 6.179a1 1 0 0 0 1.217 1.217l6.062-1.662a11.93 11.93 0 0 0 5.807 1.479h.005c6.627 0 12-5.373 12-12 0-3.18-1.24-6.167-3.492-8.505"/></svg></a>
+      </div>
+  </nav>
+  <!-- Controles de idioma y tema: en sidebar para escritorio, arriba para móvil -->
+  <!-- JavaScript de traducción y controles movido a main.js -->
+  <aside class="hidden md:flex flex-col items-center bg-[#f8fafc] dark:bg-[#112240] text-[#0a192f] dark:text-[#ccd6f6] w-[270px] min-h-screen p-8 gap-8 shadow-xl border-r border-[#e2e8f0] dark:border-[#233554] fixed top-0 left-0 z-40">
+    <img src="assets/img/avatar.jpeg" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-[#003380] mb-2 shadow-lg mt-2">
+    <div id="sidebar-name" class="font-bold text-lg text-[#003380] dark:text-[#64ffda]">Alejandro Pastor</div>
+    <div id="sidebar-role" class="text-base text-[#64748b] dark:text-[#8892b0] text-center mb-6">Ingeniero en Software | Especialista en Desarrollo de Soluciones Tecnológicas</div>
+    <nav class="w-full">
+      <ul class="flex flex-col gap-6 items-start w-full">
+        <li><a id="nav-inicio" href="#inicio" class="text-[#64748b] dark:text-[#8892b0] hover:text-[#64ffda] font-semibold px-4 py-1 rounded-md transition">Inicio</a></li>
+        <li><a id="nav-experiencia" href="#experiencia" class="text-[#64748b] dark:text-[#8892b0] hover:text-[#64ffda] font-semibold px-4 py-1 rounded-md transition">Experiencia</a></li>
+        <li><a id="nav-formacion" href="#formacion" class="text-[#64748b] dark:text-[#8892b0] hover:text-[#64ffda] font-semibold px-4 py-1 rounded-md transition">Formación</a></li>
+      </ul>
+    </nav>
+    <div id="sidebar-controls" class="flex flex-col items-start gap-4 mt-8 mb-2 w-full">
+      <div id="lang-dropdown-sidebar" class="relative">
+        <div id="lang-selected-sidebar" class="flex items-center gap-2 bg-transparent border-none text-[#003380] dark:text-[#64ffda] text-base cursor-pointer px-3 py-1 rounded-md outline-none">
+          <img id="lang-selected-flag-sidebar" src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" class="inline-block align-middle"> 
+          <span id="lang-selected-label-sidebar">Español</span>
+          <span class="text-xs">▼</span>
+        </div>
+        <div id="lang-options-sidebar" class="hidden absolute top-8 left-0 bg-[#232f45] rounded-md shadow-lg min-w-[140px] z-50">
+          <div class="lang-option-sidebar flex items-center gap-2 px-4 py-2 cursor-pointer text-[#003380] dark:text-[#64ffda] bg-transparent text-base hover:bg-[#233554]" data-lang="es">
+            <img src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" class="inline-block align-middle"> <span>Español</span>
+          </div>
+          <div class="lang-option-sidebar flex items-center gap-2 px-4 py-2 cursor-pointer text-[#003380] dark:text-[#64ffda] bg-transparent text-base hover:bg-[#233554]" data-lang="en">
+            <img src="https://flagcdn.com/w20/gb.png" width="20" height="14" alt="English" class="inline-block align-middle"> <span>English</span>
+          </div>
         </div>
       </div>
+      <button id="theme-toggle-sidebar" title="Cambiar tema" class="flex items-center gap-2 bg-transparent border-none text-[#003380] dark:text-[#64ffda] text-base cursor-pointer px-3 py-1 rounded-md outline-none">
+        <span id="theme-label-sidebar">Modo Oscuro</span><i class="fas fa-moon"></i>
+      </button>
     </div>
-    <button id="theme-toggle" title="Cambiar tema" style="display:flex;align-items:center;gap:0.4em;background:none;border:none;color:var(--primary);font-size:1.15rem;cursor:pointer;padding:0.2em 0.7em 0.2em 0.2em;border-radius:6px;outline:none;">
-      <span id="theme-label">Modo Oscuro</span><i class="fas fa-moon"></i>
-    </button>
-  </div>
-  <script>
-    // Traducción completa ES/EN para todas las secciones
-    const translations = {
-      es: {
-        sidebarRole: 'Ingeniero en Software | Especialista en Desarrollo de Soluciones Tecnológicas',
-        sidebarNav: ['Inicio', 'Experiencia', 'Formación'],
-        heroTitle: '¡Hola! Soy <span class="highlight">Alejandro Pastor</span>',
-        heroSubtitle: 'Creador de soluciones tecnológicas: frontend, backend, microservicios, bases de datos, APIs, automatización, integración y más. Apasionado por la innovación y la mejora continua.',
-        heroIntro: `¡Hola! Gracias por visitar mi portafolio. Aquí comparto algunos de los proyectos y aprendizajes que más me han marcado en mi etapa universitaria y en mis primeros pasos en el mundo profesional.<br><br>
+    <div class="flex gap-4 mt-4">
+      <a href="https://www.linkedin.com/in/alejandro-pastor-3761043a9/" title="LinkedIn" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white transition"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+      <a href="https://github.com/jopasma7" title="GitHub" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white transition"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+      <a href="https://wa.me/34683132931" title="WhatsApp" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white transition"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.617h-.001a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.455 4.436-9.89 9.893-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.896 6.994c-.003 5.456-4.438 9.891-9.893 9.891m8.413-18.306a11.815 11.815 0 0 0-8.413-3.49c-6.627 0-12 5.373-12 12 0 2.121.555 4.199 1.607 6.032l-1.693 6.179a1 1 0 0 0 1.217 1.217l6.062-1.662a11.93 11.93 0 0 0 5.807 1.479h.005c6.627 0 12-5.373 12-12 0-3.18-1.24-6.167-3.492-8.505"/></svg></a>
+    </div>
+  </aside>
+  <main class="md:ml-[270px] p-6 max-w-4xl mx-auto relative z-10 bg-white dark:bg-[#101a2b] transition-colors duration-300">
+    <section id="inicio" class="section pt-16 pb-10 min-h-[60vh] flex flex-col gap-4">
+      <h1 id="main-title" class="text-3xl md:text-4xl font-bold mb-2 text-[#0a192f] dark:text-[#ccd6f6] font-display">
+        ¡Hola! Soy <span class="gradient-title" style="font-size:2.8rem;line-height:1.05;vertical-align:middle;display:inline-block;">Alejandro Pastor</span>
+      </h1>
+      <h2 id="main-subtitle" class="text-xl md:text-2xl font-semibold text-[#003380] dark:text-[#64ffda] mb-4 font-display">Creador de soluciones tecnológicas: frontend, backend, microservicios, bases de datos, APIs, automatización, integración y más. Apasionado por la innovación y la mejora continua.</h2>
+      <p id="main-intro" class="text-base md:text-lg text-[#64748b] dark:text-[#8892b0] leading-relaxed">
+        ¡Hola! Gracias por visitar mi portafolio. Aquí comparto algunos de los proyectos y aprendizajes que más me han marcado en mi etapa universitaria y en mis primeros pasos en el mundo profesional.<br><br>
         Aunque mi camino en la tecnología acaba de empezar, cuento con una base sólida y experiencia práctica en desarrollo web, backend, microservicios y bases de datos. No soy un novato, pero tampoco lo sé todo: sigo aprendiendo y mejorando cada día, con muchas ganas de aportar y crecer en nuevos retos.<br><br>       
         Mi nombre es Alejandro, tengo 30 años y este año estoy finalizando mi Trabajo de Fin de Grado en Ingeniería Informática, especialidad en Tecnologías de la Información. Mi pasión por la tecnología y la programación comenzó desde muy pequeño, entre los 10 y 15 años, antes incluso de recibir clases de informática en el colegio, ya creaba mis propios plugins en Java para juegos como Minecraft, así como scripts en JavaScript y C para juegos en línea de navegador, desde títulos medievales de construcción hasta juegos de carreras.<br><br>
         Inicié mi carrera universitaria a una edad temprana, pero por motivos económicos tuve que interrumpirla temporalmente. Mi familia no podía apoyarme económicamente y tuve que trabajar en diversos sectores como hostelería, administración pública, construcción, gasolineras... para poder costear mis estudios y mantenerme. Esta etapa me enseñó el valor del esfuerzo, la resiliencia y la importancia de perseguir mis sueños.<br><br>
         A lo largo de estos años, nunca dejé de aprender ni de crear. He desarrollado proyectos personales tanto para mi propio uso como para seguir creciendo profesionalmente. Entre ellos destacan bots para Discord y Telegram utilizando Python, aplicaciones de escritorio con Electron (basado en Chromium y tecnologías web como HTML, CSS y JavaScript), y soluciones de gestión para negocios como floristerías y cafeterías, así como aplicaciones para la gestión de clientes, contactos y cementerios, primero como aplicaciones de escritorio y posteriormente migradas a aplicaciones web con frontend y backend. Para ello, he utilizado tecnologías como Node.js, React, bases de datos relacionales (SQL, PostgreSQL) y no relacionales (MongoDB, Redis).<br><br>
         Aunque aún no he tenido la oportunidad de aplicar todo este conocimiento en una empresa del sector tecnológico, mi experiencia es sólida y real. Estoy convencido de que puedo adaptarme rápidamente a cualquier entorno profesional, aportar valor desde el primer día y seguir aprendiendo y creciendo junto a mi equipo.<br><br>
-        Mi camino apenas comienza, pero llego con una base firme, pasión por la tecnología y muchas ganas de afrontar nuevos retos.`,
-        contactBtn: 'Contáctame',
-        about: `<strong>Ingeniero Informático</strong> con una sólida formación y experiencia en desarrollo web, programación y gestión de bases de datos. Me considero una persona proactiva, resolutiva y con gran capacidad de aprendizaje, apasionado por la tecnología y la innovación.<br><br>He participado en proyectos académicos y personales donde he diseñado y desarrollado soluciones digitales eficientes, escalables y orientadas al usuario, aplicando tecnologías como Python, JavaScript, Node.js, TypeScript y sistemas de bases de datos relacionales y no relacionales.<br><br>Mi objetivo es aportar valor real a través de la tecnología, enfrentando nuevos retos, trabajando en equipo y manteniéndome en constante evolución profesional. Destaco por mi orientación a resultados, atención al detalle y compromiso con la calidad en cada proyecto.<br><br><strong>Contacto:</strong> <a href="mailto:Alejandro-benilloba@hotmail.com">Alejandro-benilloba@hotmail.com</a> · <a href="tel:+34683132931">+34 683 132 931</a> · Benilloba (Alicante)`,
-        expTitle: 'Experiencia y Proyectos Reales',
-        expIntro: 'Aunque aún no he trabajado en empresas del sector tecnológico, he desarrollado diversos proyectos y soluciones para clientes independientes y para mi propio aprendizaje. Mi experiencia se basa en la creación de aplicaciones reales, resolviendo necesidades concretas y colaborando en pequeños encargos, lo que me ha permitido adquirir habilidades prácticas y una visión profesional del desarrollo de software.',
-        uniProjects: 'Proyectos Universitarios',
-        uniCards: [
-          {
-            title: 'Gestor de Tareas Inteligente',
-            desc: 'Aplicación web para organizar tareas personales y profesionales, con recordatorios inteligentes, sincronización en la nube e interfaz intuitiva. Permite gestionar proyectos, establecer prioridades y recibir notificaciones automáticas.',
-            tech: 'React, Node.js, MongoDB'
-          },
-          {
-            title: 'Bot Telegram para gestión de Aulas',
-            desc: 'Bot de Telegram para la gestión y solicitud de aulas en la universidad. Permite CRUD de usuarios mediante comandos, asignación de roles y gestión de reservas, todo respaldado por un modelo de base de datos SQL.',
-            tech: 'Python, Telegram Bot API, SQL, Roles de usuario'
-          },
-          {
-            title: 'Aplicación Web COVID',
-            desc: 'Aplicación web para detectar usuarios infectados en la zona, similar a Pokémon Go: incluye un mapa interactivo donde el usuario se mueve y puede visualizar a las personas contagiadas cercanas en tiempo real.',
-            tech: 'JavaScript, Node.js, MySQL, APIs de mapas'
-          },
-          {
-            title: 'Sistema de mensajería tipo Twitter (CLI)',
-            desc: 'Aplicación de consola que simula una red social, con gestión de cuentas, autenticación, publicaciones, likes y retweets. Implementación de lógica de negocio y persistencia de datos.',
-            tech: 'JavaScript, Node.js, MongoDB'
-          },
-          {
-            title: 'Aplicación web de alquiler vacacional',
-            desc: 'Plataforma web para la gestión de alojamientos turísticos, reservas y valoraciones. Creada inicialmente con microservicios independientes, que luego fueron integrados de forma separada. Incluye arquitectura MVC, control de versiones en GitHub y gestión de errores con logs detallados.',
-            tech: 'TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservicios, Logs'
-          }
-        ],
-        personalProjects: 'Proyectos Personales',
-        personalCards: [
-          {
-            title: 'Floristería',
-            desc: 'Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js para entornos Windows y multiplataforma.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Floristeria',
-            linkText: 'Ver en GitHub'
-          },
-          {
-            title: 'Cementerio',
-            desc: 'Sistema de gestión de cementerios que permite registrar ubicaciones, gestionar concesiones, administrar pagos y mantener un histórico de movimientos. La aplicación facilita saber dónde están enterradas las personas, qué espacios hay libres y poder venderlos o reasignarlos fácilmente. Incluye búsqueda avanzada, generación de informes y copias de seguridad automáticas.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Cementerio',
-            linkText: 'Ver en GitHub'
-          },
-          {
-            title: 'Restaurante',
-            desc: 'Plantilla base para aplicaciones de gestión de menús y comidas en comedores, restaurantes o eventos. Permite crear menús, asignar platos, gestionar ingredientes y controlar el stock de alimentos. Estructura modular y personalizable.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Gestor-Comidas',
-            linkText: 'Ver en GitHub'
-          },
-          {
-            title: 'Pacientes (Nefrología)',
-            desc: 'Aplicación diseñada específicamente para la sección de Nefrología, orientada a la gestión integral de pacientes. Permite crear, editar y listar pacientes, visualizando de forma clara sus accesos vasculares y el estado médico de cada uno. Incluye sincronización robusta entre base de datos local y la nube (Turso), registro de historiales médicos, citas, tratamientos y exportación de datos. Ideal para clínicas y consultas especializadas.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Pacientes',
-            linkText: 'Ver en GitHub'
-          },
-          {
-            title: 'Pacientes (Nefrología) - Web',
-            desc: 'Continuación y evolución del proyecto anterior, migrando la aplicación de gestión de pacientes de una solución basada en Electron a una aplicación web moderna. Esta nueva versión cuenta con un frontend y backend más robustos, escalables y personalizables, permitiendo un acceso multiplataforma, mayor seguridad y nuevas funcionalidades adaptadas a las necesidades de la sección de Nefrología.<br><br><strong>Actualmente en producción:</strong> Backend alojado en Zeabur y Frontend en Vercel.',
-            link: '',
-            linkText: ''
-          },
-          {
-            title: 'Contactos',
-            desc: 'Aplicación de escritorio multiplataforma para la gestión de contactos, clientes y agenda. Este proyecto fue desarrollado para un cliente que solicitó una solución sencilla para gestionar sus clientes en su trabajo diario, quedando muy satisfecho con el resultado. Incluye CRUD avanzado, filtros de búsqueda, importación/exportación de datos y notificaciones. Interfaz intuitiva y soporte para múltiples usuarios.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Sistema-Contactos',
-            linkText: 'Ver en GitHub'
-          }
-        ],
-        skillsTitle: 'Habilidades',
-        skills: [
-          { name: '<i class="fab fa-js-square"></i> JavaScript (ES6+)', width: '78%' },
-          { name: '<i class="fab fa-react"></i> React', width: '70%' },
-          { name: '<i class="fab fa-node-js"></i> Node.js', width: '65%' },
-          { name: '<i class="fab fa-html5"></i> HTML & <i class="fab fa-css3-alt"></i> CSS', width: '85%' },
-          { name: '<i class="fab fa-python"></i> Python', width: '60%' },
-          { name: '<i class="fab fa-java"></i> Java', width: '55%' },
-          { name: '<i class="fab fa-git-alt"></i> Git & GitHub', width: '70%' },
-          { name: '<i class="fas fa-database"></i> Bases de Datos', width: '65%' }
-        ],
-        eduTitle: 'Formación',
-        eduIntro: 'Mi recorrido universitario ha sido largo y lleno de aprendizajes, comenzando en 2013 y extendiéndose hasta 2026. No ha sido un camino lineal: por motivos económicos y personales, tuve que compaginar mis estudios con el trabajo y otras responsabilidades, lo que me obligó a pausar y retomar la carrera en varias ocasiones. Es importante destacar que este retraso nunca se debió a suspensos: todo lo que matriculé lo superé con esfuerzo y dedicación. Además, todos esos años me sirvieron para seguir aprendiendo y creciendo; no fueron en absoluto un descanso ni una pausa, sino una etapa activa de desarrollo personal y profesional. Sin embargo, nunca perdí la motivación ni las ganas de superarme. Cada año, cada reto y cada asignatura han forjado en mí una gran resiliencia, constancia y pasión por la informática. Hoy, a punto de finalizar el grado, miro atrás con orgullo por no haberme rendido y por haber convertido cada obstáculo en una oportunidad de crecimiento personal y profesional.',
-        timeline: [
-          {
-            title: 'Grado en Ingeniería Informática',
-            desc: 'Universidad Politécnica de Valencia - Campus de Alcoy.<br>Formación integral en desarrollo de software, bases de datos, arquitectura de sistemas y gestión de proyectos tecnológicos.'
-          },
-          {
-            title: 'Idiomas',
-            desc: `<ul>
-              <li><strong>Español:</strong> Nativo</li>
-              <li><strong>Valenciano:</strong> Nativo</li>
-              <li><strong>Inglés:</strong> Intermedio / Avanzado (capacidad para trabajar y comunicarme en entornos internacionales)</li>
-            </ul>`
-          },
-          {
-            title: 'Información adicional',
-            desc: `<ul>
-              <li>Carnet de conducir y vehículo propio</li>
-              <li>Disponibilidad para viajar y cambio de residencia</li>
-              <li>Residente en Benilloba (Alicante)</li>
-            </ul>`
-          }
-        ],
-        footer: '&copy; 2026 Alejandro Pastor. Hecho con pasión y café ☕'
-      },
-      en: {
-        sidebarRole: 'Software Engineer | Specialist in Technological Solutions Development',
-        sidebarNav: ['Home', 'Experience', 'Education'],
-        heroTitle: 'Hi! I am <span class="highlight">Alejandro Pastor</span>',
-        heroSubtitle: 'Creator of technological solutions: frontend, backend, microservices, databases, APIs, automation, integration and more. Passionate about innovation and continuous improvement.',
-        heroIntro: `Hi! Thank you for visiting my portfolio. Here I share some of the projects and lessons that have most marked my university stage and my first steps in the professional world.<br><br>
-        Although my journey in technology has just begun, I have a solid foundation and hands-on experience in web development, backend, microservices and databases. I am not a novice, but I do not know everything either: I keep learning and improving every day, eager to contribute and grow in new challenges.<br><br>
-        My name is Alejandro, I am 30 years old and this year I am finishing my Final Degree Project in Computer Engineering, specializing in Information Technologies. My passion for technology and programming began at a very young age, between 10 and 15 years old, even before receiving computer classes at school, I was already creating my own Java plugins for games like Minecraft, as well as JavaScript and C scripts for online browser games, from medieval building titles to racing games.<br><br>
-        I started my university career at an early age, but for economic reasons I had to interrupt it temporarily. My family could not support me financially and I had to work in various sectors such as hospitality, public administration, construction, gas stations... to pay for my studies and support myself. This stage taught me the value of effort, resilience and the importance of pursuing my dreams.<br><br>
-        Throughout these years, I never stopped learning or creating. I have developed personal projects both for my own use and to continue growing professionally. Among them are bots for Discord and Telegram using Python, desktop applications with Electron (based on Chromium and web technologies such as HTML, CSS and JavaScript), and management solutions for businesses such as flower shops and coffee shops, as well as applications for managing clients, contacts and cemeteries, first as desktop applications and later migrated to web applications with frontend and backend. For this, I have used technologies such as Node.js, React, relational databases (SQL, PostgreSQL) and non-relational (MongoDB, Redis).<br><br>
-        Although I have not yet had the opportunity to apply all this knowledge in a technology company, my experience is solid and real. I am convinced that I can quickly adapt to any professional environment, provide value from day one and continue learning and growing with my team.<br><br>
-        My journey is just beginning, but I arrive with a firm foundation, a passion for technology and a great desire to face new challenges.`,
-        contactBtn: 'Contact me',
-        about: `<strong>Computer Engineer</strong> with a solid background and experience in web development, programming and database management. I am a proactive, solution-oriented person with a great capacity for learning, passionate about technology and innovation.<br><br>I have participated in academic and personal projects where I have designed and developed efficient, scalable and user-oriented digital solutions, applying technologies such as Python, JavaScript, Node.js, TypeScript and relational and non-relational database systems.<br><br>My goal is to provide real value through technology, facing new challenges, working in teams and constantly evolving professionally. I stand out for my results orientation, attention to detail and commitment to quality in every project.<br><br><strong>Contact:</strong> <a href="mailto:Alejandro-benilloba@hotmail.com">Alejandro-benilloba@hotmail.com</a> · <a href="tel:+34683132931">+34 683 132 931</a> · Benilloba (Alicante)`,
-        expTitle: 'Experience and Real Projects',
-        expIntro: 'Although I have not yet worked in technology companies, I have developed various projects and solutions for independent clients and for my own learning. My experience is based on creating real applications, solving specific needs and collaborating on small assignments, which has allowed me to acquire practical skills and a professional vision of software development.',
-        uniProjects: 'University Projects',
-        uniCards: [
-          {
-            title: 'Smart Task Manager',
-            desc: 'Web application to organize personal and professional tasks, with smart reminders, cloud sync and intuitive interface. Allows you to manage projects, set priorities and receive automatic notifications.',
-            tech: 'React, Node.js, MongoDB'
-          },
-          {
-            title: 'Telegram Bot for Classroom Management',
-            desc: 'Telegram bot for managing and requesting classrooms at the university. Allows user CRUD via commands, role assignment and reservation management, all backed by an SQL database model.',
-            tech: 'Python, Telegram Bot API, SQL, User roles'
-          },
-          {
-            title: 'COVID Web Application',
-            desc: 'Web application to detect infected users in the area, similar to Pokémon Go: includes an interactive map where the user moves and can see nearby infected people in real time.',
-            tech: 'JavaScript, Node.js, MySQL, Map APIs'
-          },
-          {
-            title: 'Twitter-like Messaging System (CLI)',
-            desc: 'Console application that simulates a social network, with account management, authentication, posts, likes and retweets. Business logic implementation and data persistence.',
-            tech: 'JavaScript, Node.js, MongoDB'
-          },
-          {
-            title: 'Vacation Rental Web Application',
-            desc: 'Web platform for managing tourist accommodations, reservations and reviews. Initially created with independent microservices, which were later integrated separately. Includes MVC architecture, version control on GitHub and error management with detailed logs.',
-            tech: 'TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservices, Logs'
-          }
-        ],
-        personalProjects: 'Personal Projects',
-        personalCards: [
-          {
-            title: 'Flower Shop',
-            desc: 'Desktop application for comprehensive flower shop management: sales control, inventory, suppliers, clients and report generation. Includes admin panel, visual dashboard and user system. Developed with Electron and Node.js for Windows and multiplatform environments.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Floristeria',
-            linkText: 'View on GitHub'
-          },
-          {
-            title: 'Cemetery',
-            desc: 'Cemetery management system that allows you to register locations, manage concessions, administer payments and keep a history of movements. The application makes it easy to know where people are buried, which spaces are free and to sell or reassign them easily. Includes advanced search, report generation and automatic backups.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Cementerio',
-            linkText: 'View on GitHub'
-          },
-          {
-            title: 'Restaurant',
-            desc: 'Base template for menu and meal management applications in canteens, restaurants or events. Allows you to create menus, assign dishes, manage ingredients and control food stock. Modular and customizable structure.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Gestor-Comidas',
-            linkText: 'View on GitHub'
-          },
-          {
-            title: 'Patients (Nephrology)',
-            desc: 'Application designed specifically for the Nephrology section, aimed at comprehensive patient management. Allows you to create, edit and list patients, clearly visualizing their vascular accesses and the medical status of each one. Includes robust synchronization between local and cloud database (Turso), medical history records, appointments, treatments and data export. Ideal for clinics and specialized consultations.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Pacientes',
-            linkText: 'View on GitHub'
-          },
-          {
-            title: 'Patients (Nephrology) - Web',
-            desc: 'Continuation and evolution of the previous project, migrating the patient management application from an Electron-based solution to a modern web application. This new version has a more robust, scalable and customizable frontend and backend, allowing multiplatform access, greater security and new features adapted to the needs of the Nephrology section.<br><br><strong>Currently in production:</strong> Backend hosted on Zeabur and Frontend on Vercel.',
-            link: '',
-            linkText: ''
-          },
-          {
-            title: 'Contacts',
-            desc: 'Cross-platform desktop application for managing contacts, clients and agenda. This project was developed for a client who requested a simple solution to manage their clients in their daily work, being very satisfied with the result. Includes advanced CRUD, search filters, data import/export and notifications. Intuitive interface and support for multiple users.',
-            link: 'https://github.com/jopasma7/Trabajos/tree/master/Sistema-Contactos',
-            linkText: 'View on GitHub'
-          }
-        ],
-        skillsTitle: 'Skills',
-        skills: [
-          { name: '<i class="fab fa-js-square"></i> JavaScript (ES6+)', width: '78%' },
-          { name: '<i class="fab fa-react"></i> React', width: '70%' },
-          { name: '<i class="fab fa-node-js"></i> Node.js', width: '65%' },
-          { name: '<i class="fab fa-html5"></i> HTML & <i class="fab fa-css3-alt"></i> CSS', width: '85%' },
-          { name: '<i class="fab fa-python"></i> Python', width: '60%' },
-          { name: '<i class="fab fa-java"></i> Java', width: '55%' },
-          { name: '<i class="fab fa-git-alt"></i> Git & GitHub', width: '70%' },
-          { name: '<i class="fas fa-database"></i> Databases', width: '65%' }
-        ],
-        eduTitle: 'Education',
-        eduIntro: 'My university journey has been long and full of learning, starting in 2013 and extending to 2026. It has not been a linear path: for economic and personal reasons, I had to combine my studies with work and other responsibilities, which forced me to pause and resume my degree several times. It is important to note that this delay was never due to failing: everything I enrolled in I passed with effort and dedication. In addition, all those years served me to continue learning and growing; they were by no means a break or a pause, but an active stage of personal and professional development. However, I never lost my motivation or desire to improve. Each year, each challenge and each subject have forged in me great resilience, perseverance and passion for computer science. Today, about to finish my degree, I look back with pride for not having given up and for having turned every obstacle into an opportunity for personal and professional growth.',
-        timeline: [
-          {
-            title: 'Degree in Computer Engineering',
-            desc: 'Polytechnic University of Valencia - Alcoy Campus.<br>Comprehensive training in software development, databases, systems architecture and technological project management.'
-          },
-          {
-            title: 'Languages',
-            desc: `<ul>
-              <li><strong>Spanish:</strong> Native</li>
-              <li><strong>Valencian:</strong> Native</li>
-              <li><strong>English:</strong> Intermediate / Advanced (ability to work and communicate in international environments)</li>
-            </ul>`
-          },
-          {
-            title: 'Additional information',
-            desc: `<ul>
-              <li>Driver's license and own vehicle</li>
-              <li>Willingness to travel and relocate</li>
-              <li>Resident in Benilloba (Alicante)</li>
-            </ul>`
-          }
-        ],
-        footer: '&copy; 2026 Alejandro Pastor. Made with passion and coffee ☕'
-      }
-    };
-
-    let currentLang = 'es';
-    // Custom dropdown for language selection
-    const langDropdown = document.getElementById('lang-dropdown');
-    const langSelected = document.getElementById('lang-selected');
-    const langSelectedFlag = document.getElementById('lang-selected-flag');
-    const langSelectedLabel = document.getElementById('lang-selected-label');
-    const langOptions = document.getElementById('lang-options');
-    function setLang(lang) {
-      currentLang = lang;
-      // Hero section
-      document.querySelector('#inicio h1').innerHTML = translations[lang].heroTitle;
-      document.querySelector('#inicio .subtitle').textContent = translations[lang].heroSubtitle;
-      document.querySelector('#inicio .intro').innerHTML = translations[lang].heroIntro;
-      // Sidebar role
-      document.querySelector('.sidebar-role').textContent = translations[lang].sidebarRole;
-      // Sidebar nav
-      const navLinks = document.querySelectorAll('.sidebar nav ul li a');
-      translations[lang].sidebarNav.forEach((txt, i) => {
-        if (navLinks[i]) navLinks[i].textContent = txt;
-      });
-      // Experiencia y proyectos
-      document.querySelector('.titulo-experiencia').textContent = translations[lang].expTitle;
-      document.querySelector('#experiencia > p').textContent = translations[lang].expIntro;
-      // Proyectos universitarios
-      // Selecciona el h2 correcto para 'Proyectos Universitarios'/'University Projects'
-      const h2s = document.querySelectorAll('#experiencia h2');
-      if (h2s[1]) h2s[1].textContent = translations[lang].uniProjects;
-      const uniCards = document.querySelectorAll('.universitarios-cards .trabajo-card');
-      translations[lang].uniCards.forEach((card, i) => {
-        if (uniCards[i]) {
-          uniCards[i].querySelector('h4').textContent = card.title;
-          uniCards[i].querySelector('p').textContent = card.desc;
-          uniCards[i].querySelector('span').textContent = card.tech;
-        }
-      });
-      // Proyectos personales
-      document.querySelector('#experiencia h2[style]') && (document.querySelector('#experiencia h2[style]').textContent = translations[lang].personalProjects);
-      const personalCards = document.querySelectorAll('.trabajos-github-cards .trabajo-card');
-      translations[lang].personalCards.forEach((card, i) => {
-        if (personalCards[i]) {
-          personalCards[i].querySelector('h4').textContent = card.title;
-          personalCards[i].querySelector('p').innerHTML = card.desc;
-          const a = personalCards[i].querySelector('a');
-          if (a && card.link) {
-            a.href = card.link;
-            a.textContent = card.linkText;
-            a.style.display = '';
-          } else if (a) {
-            a.style.display = 'none';
-          }
-        }
-      });
-      // Skills
-      document.querySelector('.skills-category h2').textContent = translations[lang].skillsTitle;
-      const skillEls = document.querySelectorAll('.skills-bar .skill');
-      translations[lang].skills.forEach((skill, i) => {
-        if (skillEls[i]) {
-          skillEls[i].querySelector('span').innerHTML = skill.name;
-          skillEls[i].querySelector('.bar > div').style.width = skill.width;
-        }
-      });
-      // Formación/Education
-      document.querySelectorAll('.titulo-experiencia')[1].textContent = translations[lang].eduTitle;
-      document.querySelector('#formacion > p').textContent = translations[lang].eduIntro;
-      // Timeline
-      const timelineItems = document.querySelectorAll('.timeline-item');
-      translations[lang].timeline.forEach((item, i) => {
-        if (timelineItems[i]) {
-          timelineItems[i].querySelector('h3').textContent = item.title;
-          timelineItems[i].querySelector('p, ul').innerHTML = item.desc;
-        }
-      });
-      // Footer
-      document.querySelector('.footer p').innerHTML = translations[lang].footer;
-      // Update custom dropdown
-      if (langSelectedFlag && langSelectedLabel) {
-        if (lang === 'es') {
-          langSelectedFlag.src = 'https://flagcdn.com/w20/es.png';
-          langSelectedFlag.alt = 'Español';
-          langSelectedLabel.textContent = 'Español';
-        } else {
-          langSelectedFlag.src = 'https://flagcdn.com/w20/gb.png';
-          langSelectedFlag.alt = 'English';
-          langSelectedLabel.textContent = 'English';
-        }
-      }
-    }
-    // Dropdown logic
-    if (langSelected && langOptions) {
-      langSelected.addEventListener('click', () => {
-        langOptions.style.display = langOptions.style.display === 'block' ? 'none' : 'block';
-      });
-      document.querySelectorAll('.lang-option').forEach(opt => {
-        opt.addEventListener('click', function() {
-          setLang(this.getAttribute('data-lang'));
-          langOptions.style.display = 'none';
-        });
-      });
-      // Hide dropdown on outside click
-      document.addEventListener('click', function(e) {
-        if (!langDropdown.contains(e.target)) {
-          langOptions.style.display = 'none';
-        }
-      });
-    }
-  </script>
-  <aside class="sidebar">
-    <img src="assets/img/avatar.jpeg" alt="Avatar" class="avatar">
-    <div class="sidebar-name">Alejandro Pastor</div>
-    <div class="sidebar-role">Ingeniero en Software | Especialista en Desarrollo de Soluciones Tecnológicas</div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
-        <li><a href="#formacion">Formación</a></li>
-      </ul>
-    </nav>
-    <div class="sidebar-social">
-      <a href="https://www.linkedin.com/in/alejandro-pastor-3761043a9/" title="LinkedIn" target="_blank"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
-      <a href="https://github.com/jopasma7" title="GitHub" target="_blank"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-      <a href="https://wa.me/34683132931" title="WhatsApp" target="_blank"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.617h-.001a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.455 4.436-9.89 9.893-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.896 6.994c-.003 5.456-4.438 9.891-9.893 9.891m8.413-18.306a11.815 11.815 0 0 0-8.413-3.49c-6.627 0-12 5.373-12 12 0 2.121.555 4.199 1.607 6.032l-1.693 6.179a1 1 0 0 0 1.217 1.217l6.062-1.662a11.93 11.93 0 0 0 5.807 1.479h.005c6.627 0 12-5.373 12-12 0-3.18-1.24-6.167-3.492-8.505"/></svg></a>
-    </div>
-  </aside>
-  <main class="main-content">
-    <section id="inicio" class="section hero">
-      <h1>¡Hola! Soy <span class="highlight">Alejandro Pastor</span></h1>
-      <h2 class="subtitle">Creador de soluciones tecnológicas: frontend, backend, microservicios, bases de datos, APIs, automatización, integración y más. Apasionado por la innovación y la mejora continua.</h2>
-      <p class="intro">
-        ¡Hola! Gracias por visitar mi portafolio. Aquí comparto algunos de los proyectos y aprendizajes que más me han marcado en mi etapa universitaria y en mis primeros pasos en el mundo profesional.<br><br>
-        Aunque mi camino en la tecnología acaba de empezar, cuento con una base sólida y experiencia práctica en desarrollo web, backend, microservicios y bases de datos. No soy un novato, pero tampoco lo sé todo: sigo aprendiendo y mejorando cada día, con muchas ganas de aportar y crecer en nuevos retos.<br><br>       
-          Mi nombre es Alejandro, tengo 30 años y este año estoy finalizando mi Trabajo de Fin de Grado en Ingeniería Informática, especialidad en Tecnologías de la Información. Mi pasión por la tecnología y la programación comenzó desde muy pequeño, entre los 10 y 15 años, antes incluso de recibir clases de informática en el colegio, ya creaba mis propios plugins en Java para juegos como Minecraft, así como scripts en JavaScript y C para juegos en línea de navegador, desde títulos medievales de construcción hasta juegos de carreras.<br><br>
-
-          Inicié mi carrera universitaria a una edad temprana, pero por motivos económicos tuve que interrumpirla temporalmente. Mi familia no podía apoyarme económicamente y tuve que trabajar en diversos sectores como hostelería, administración pública, construcción, gasolineras... para poder costear mis estudios y mantenerme. Esta etapa me enseñó el valor del esfuerzo, la resiliencia y la importancia de perseguir mis sueños.<br><br>
-
-          A lo largo de estos años, nunca dejé de aprender ni de crear. He desarrollado proyectos personales tanto para mi propio uso como para seguir creciendo profesionalmente. Entre ellos destacan bots para Discord y Telegram utilizando Python, aplicaciones de escritorio con Electron (basado en Chromium y tecnologías web como HTML, CSS y JavaScript), y soluciones de gestión para negocios como floristerías y cafeterías, así como aplicaciones para la gestión de clientes, contactos y cementerios, primero como aplicaciones de escritorio y posteriormente migradas a aplicaciones web con frontend y backend. Para ello, he utilizado tecnologías como Node.js, React, bases de datos relacionales (SQL, PostgreSQL) y no relacionales (MongoDB, Redis).<br><br>
-
-          Aunque aún no he tenido la oportunidad de aplicar todo este conocimiento en una empresa del sector tecnológico, mi experiencia es sólida y real. Estoy convencido de que puedo adaptarme rápidamente a cualquier entorno profesional, aportar valor desde el primer día y seguir aprendiendo y creciendo junto a mi equipo.<br><br>
-
-          Mi camino apenas comienza, pero llego con una base firme, pasión por la tecnología y muchas ganas de afrontar nuevos retos.
-        </p>
-      <div class="about-text">
-      <!-- about-text eliminado por petición -->
-      <!-- skills-bar movido a Experiencia -->
-    </section>
-    <section id="experiencia" class="section experience">
-      <h2 class="titulo-experiencia">Experiencia y Proyectos Reales</h2>
-      <p style="margin-bottom:2rem;color:var(--accent);max-width:700px;">
-        Aunque aún no he trabajado en empresas del sector tecnológico, he desarrollado diversos proyectos y soluciones para clientes independientes y para mi propio aprendizaje. Mi experiencia se basa en la creación de aplicaciones reales, resolviendo necesidades concretas y colaborando en pequeños encargos, lo que me ha permitido adquirir habilidades prácticas y una visión profesional del desarrollo de software.
+        Mi camino apenas comienza, pero llego con una base firme, pasión por la tecnología y muchas ganas de afrontar nuevos retos.
       </p>
-      <h2>Proyectos Universitarios</h2>
-      <div class="universitarios-cards" style="margin-top:1.5rem; display: flex; flex-wrap: wrap; gap: 1.5rem;">
-        <div class="trabajo-card">
-          <h4>Gestor de Tareas Inteligente</h4>
-          <p>Aplicación web para organizar tareas personales y profesionales, con recordatorios inteligentes, sincronización en la nube e interfaz intuitiva. Permite gestionar proyectos, establecer prioridades y recibir notificaciones automáticas.</p>
-          <span style="color:var(--accent);font-size:0.98rem;">React, Node.js, MongoDB</span>
+    </section>
+    <section id="experiencia" class="section pt-12 pb-10">
+      <h2 id="exp-title" class="text-2xl md:text-3xl font-bold text-[#003380] dark:text-[#64ffda] mb-4 font-display">Experiencia y Proyectos Reales</h2>
+      <p id="exp-desc" class="mb-8 text-[#64748b] dark:text-[#8892b0] max-w-2xl">Aunque aún no he trabajado en empresas del sector tecnológico, he desarrollado diversos proyectos y soluciones para clientes independientes y para mi propio aprendizaje. Mi experiencia se basa en la creación de aplicaciones reales, resolviendo necesidades concretas y colaborando en pequeños encargos, lo que me ha permitido adquirir habilidades prácticas y una visión profesional del desarrollo de software.</p>
+      <h2 id="exp-uni-title" class="text-xl font-semibold text-[#0a192f] dark:text-[#ccd6f6] mt-8 mb-4 font-display">Proyectos Universitarios</h2>
+      <div class="flex flex-wrap gap-6 mt-4">
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="uni1-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Gestor de Tareas Inteligente</h4>
+          <p id="uni1-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Aplicación web para organizar tareas personales y profesionales, con recordatorios inteligentes, sincronización en la nube e interfaz intuitiva. Permite gestionar proyectos, establecer prioridades y recibir notificaciones automáticas.</p>
+          <span id="uni1-tech" class="text-xs text-[#003380] dark:text-[#64ffda]">React, Node.js, MongoDB</span>
         </div>
-        <div class="trabajo-card">
-          <h4>Bot Telegram para gestión de Aulas</h4>
-          <p>Bot de Telegram para la gestión y solicitud de aulas en la universidad. Permite CRUD de usuarios mediante comandos, asignación de roles y gestión de reservas, todo respaldado por un modelo de base de datos SQL.</p>
-          <span style="color:var(--accent);font-size:0.98rem;">Python, Telegram Bot API, SQL, Roles de usuario</span>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="uni2-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Bot Telegram para gestión de Aulas</h4>
+          <p id="uni2-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Bot de Telegram para la gestión y solicitud de aulas en la universidad. Permite CRUD de usuarios mediante comandos, asignación de roles y gestión de reservas, todo respaldado por un modelo de base de datos SQL.</p>
+          <span id="uni2-tech" class="text-xs text-[#003380] dark:text-[#64ffda]">Python, Telegram Bot API, SQL, Roles de usuario</span>
         </div>
-        <div class="trabajo-card">
-          <h4>Aplicación Web COVID</h4>
-          <p>Aplicación web para detectar usuarios infectados en la zona, similar a Pokémon Go: incluye un mapa interactivo donde el usuario se mueve y puede visualizar a las personas contagiadas cercanas en tiempo real.</p>
-          <span style="color:var(--accent);font-size:0.98rem;">JavaScript, Node.js, MySQL, APIs de mapas</span>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="uni3-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Aplicación Web COVID</h4>
+          <p id="uni3-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Aplicación web para detectar usuarios infectados en la zona, similar a Pokémon Go: incluye un mapa interactivo donde el usuario se mueve y puede visualizar a las personas contagiadas cercanas en tiempo real.</p>
+          <span id="uni3-tech" class="text-xs text-[#003380] dark:text-[#64ffda]">JavaScript, Node.js, MySQL, APIs de mapas</span>
         </div>
-        <div class="trabajo-card">
-          <h4>Sistema de mensajería tipo Twitter (CLI)</h4>
-          <p>Aplicación de consola que simula una red social, con gestión de cuentas, autenticación, publicaciones, likes y retweets. Implementación de lógica de negocio y persistencia de datos.</p>
-          <span style="color:var(--accent);font-size:0.98rem;">JavaScript, Node.js, MongoDB</span>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="uni4-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Sistema de mensajería tipo Twitter (CLI)</h4>
+          <p id="uni4-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Aplicación de consola que simula una red social, con gestión de cuentas, autenticación, publicaciones, likes y retweets. Implementación de lógica de negocio y persistencia de datos.</p>
+          <span id="uni4-tech" class="text-xs text-[#003380] dark:text-[#64ffda]">JavaScript, Node.js, MongoDB</span>
         </div>
-        <div class="trabajo-card">
-          <h4>Aplicación web de alquiler vacacional</h4>
-          <p>Plataforma web para la gestión de alojamientos turísticos, reservas y valoraciones. Creada inicialmente con microservicios independientes, que luego fueron integrados de forma separada. Incluye arquitectura MVC, control de versiones en GitHub y gestión de errores con logs detallados.</p>
-          <span style="color:var(--accent);font-size:0.98rem;">TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservicios, Logs</span>
-        </div>
-      </div>
-      <h2 style="margin-top:3rem;">Proyectos Personales</h2>
-      <div class="trabajos-github-cards" style="margin-top:1.5rem; display: flex; flex-wrap: wrap; gap: 1.5rem;">
-        <div class="trabajo-card">
-          <h4>Floristería</h4>
-          <p>Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js para entornos Windows y multiplataforma.</p>
-          <a href="https://github.com/jopasma7/Trabajos/tree/master/Floristeria" target="_blank">Ver en GitHub</a>
-        </div>
-        <div class="trabajo-card">
-          <h4>Cementerio</h4>
-          <p>Sistema de gestión de cementerios que permite registrar ubicaciones, gestionar concesiones, administrar pagos y mantener un histórico de movimientos. La aplicación facilita saber dónde están enterradas las personas, qué espacios hay libres y poder venderlos o reasignarlos fácilmente. Incluye búsqueda avanzada, generación de informes y copias de seguridad automáticas.</p>
-          <a href="https://github.com/jopasma7/Trabajos/tree/master/Cementerio" target="_blank">Ver en GitHub</a>
-        </div>
-        <div class="trabajo-card">
-          <h4>Restaurante</h4>
-          <p>Plantilla base para aplicaciones de gestión de menús y comidas en comedores, restaurantes o eventos. Permite crear menús, asignar platos, gestionar ingredientes y controlar el stock de alimentos. Estructura modular y personalizable.</p>
-          <a href="https://github.com/jopasma7/Trabajos/tree/master/Gestor-Comidas" target="_blank">Ver en GitHub</a>
-        </div>
-        <div class="trabajo-card">
-          <h4>Pacientes (Nefrología)</h4>
-          <p>Aplicación diseñada específicamente para la sección de Nefrología, orientada a la gestión integral de pacientes. Permite crear, editar y listar pacientes, visualizando de forma clara sus accesos vasculares y el estado médico de cada uno. Incluye sincronización robusta entre base de datos local y la nube (Turso), registro de historiales médicos, citas, tratamientos y exportación de datos. Ideal para clínicas y consultas especializadas.</p>
-          <a href="https://github.com/jopasma7/Trabajos/tree/master/Pacientes" target="_blank">Ver en GitHub</a>
-        </div>
-        <div class="trabajo-card">
-          <h4>Pacientes (Nefrología) - Web</h4>
-          <p>Continuación y evolución del proyecto anterior, migrando la aplicación de gestión de pacientes de una solución basada en Electron a una aplicación web moderna. Esta nueva versión cuenta con un frontend y backend más robustos, escalables y personalizables, permitiendo un acceso multiplataforma, mayor seguridad y nuevas funcionalidades adaptadas a las necesidades de la sección de Nefrología.<br><br><strong>Actualmente en producción:</strong> Backend alojado en Zeabur y Frontend en Vercel.</p>
-        </div>
-        <div class="trabajo-card">
-          <h4>Contactos</h4>
-          <p>Aplicación de escritorio multiplataforma para la gestión de contactos, clientes y agenda. Este proyecto fue desarrollado para un cliente que solicitó una solución sencilla para gestionar sus clientes en su trabajo diario, quedando muy satisfecho con el resultado. Incluye CRUD avanzado, filtros de búsqueda, importación/exportación de datos y notificaciones. Interfaz intuitiva y soporte para múltiples usuarios.</p>
-          <a href="https://github.com/jopasma7/Trabajos/tree/master/Sistema-Contactos" target="_blank">Ver en GitHub</a>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="uni5-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Aplicación web de alquiler vacacional</h4>
+          <p id="uni5-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Plataforma web para la gestión de alojamientos turísticos, reservas y valoraciones. Creada inicialmente con microservicios independientes, que luego fueron integrados de forma separada. Incluye arquitectura MVC, control de versiones en GitHub y gestión de errores con logs detallados.</p>
+          <span id="uni5-tech" class="text-xs text-[#003380] dark:text-[#64ffda]">TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservicios, Logs</span>
         </div>
       </div>
-      <div class="skills-bar" style="margin-top:2.5rem;">
-              <div class="skills-category"><h2 style="margin-top:3rem;">Habilidades</h2></div>
-              <div class="skill"><span><i class="fab fa-js-square"></i> JavaScript (ES6+)</span><div class="bar"><div style="width:78%"></div></div></div>
-              <div class="skill"><span><i class="fab fa-react"></i> React</span><div class="bar"><div style="width:70%"></div></div></div>
-              <div class="skill"><span><i class="fab fa-node-js"></i> Node.js</span><div class="bar"><div style="width:65%"></div></div></div>
-              <div class="skill"><span><i class="fab fa-html5"></i> HTML & <i class="fab fa-css3-alt"></i> CSS</span><div class="bar"><div style="width:85%"></div></div></div>
-              <div class="skill"><span><i class="fab fa-python"></i> Python</span><div class="bar"><div style="width:60%"></div></div></div>
-              <div class="skill"><span><i class="fab fa-java"></i> Java</span><div class="bar"><div style="width:55%"></div></div></div>
-              <div class="skill"><span><i class="fab fa-git-alt"></i> Git & GitHub</span><div class="bar"><div style="width:70%"></div></div></div>
-              <div class="skill"><span><i class="fas fa-database"></i> Bases de Datos</span><div class="bar"><div style="width:65%"></div></div></div>
+      <h2 id="exp-personal-title" class="text-xl font-semibold text-[#0a192f] dark:text-[#ccd6f6] mt-8 mb-4 font-display">Proyectos Personales</h2>
+      <div class="flex flex-wrap gap-6 mt-4">
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="personal1-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Floristería</h4>
+          <p id="personal1-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js para entornos Windows y multiplataforma.</p>
+          <a id="personal1-link" href="https://github.com/jopasma7/Trabajos/tree/master/Floristeria" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white underline text-xs mt-auto">Ver en GitHub</a>
+        </div>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-3 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="personal2-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Cementerio</h4>
+          <p id="personal2-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Sistema de gestión de cementerios que permite registrar ubicaciones, gestionar concesiones, administrar pagos y mantener un histórico de movimientos. La aplicación facilita saber dónde están enterradas las personas, qué espacios hay libres y poder venderlos o reasignarlos fácilmente. Incluye búsqueda avanzada, generación de informes y copias de seguridad automáticas.</p>
+          <a id="personal2-link" href="https://github.com/jopasma7/Trabajos/tree/master/Cementerio" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white underline text-xs mt-auto">Ver en GitHub</a>
+        </div>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-5 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="personal3-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Restaurante</h4>
+          <p id="personal3-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Plantilla base para aplicaciones de gestión de menús y comidas en comedores, restaurantes o eventos. Permite crear menús, asignar platos, gestionar ingredientes y controlar el stock de alimentos. Estructura modular y personalizable.</p>
+          <a id="personal3-link" href="https://github.com/jopasma7/Trabajos/tree/master/Gestor-Comidas" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white underline text-xs mt-auto">Ver en GitHub</a>
+        </div>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-5 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="personal4-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Pacientes (Nefrología)</h4>
+          <p id="personal4-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Aplicación diseñada específicamente para la sección de Nefrología, orientada a la gestión integral de pacientes. Permite crear, editar y listar pacientes, visualizando de forma clara sus accesos vasculares y el estado médico de cada uno. Incluye sincronización robusta entre base de datos local y la nube (Turso), registro de historiales médicos, citas, tratamientos y exportación de datos. Ideal para clínicas y consultas especializadas.</p>
+          <a id="personal4-link" href="https://github.com/jopasma7/Trabajos/tree/master/Pacientes" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white underline text-xs mt-auto">Ver en GitHub</a>
+        </div>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-5 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="personal5-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Pacientes (Nefrología) - Web</h4>
+          <p id="personal5-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Continuación y evolución del proyecto anterior, migrando la aplicación de gestión de pacientes de una solución basada en Electron a una aplicación web moderna. Esta nueva versión cuenta con un frontend y backend más robustos, escalables y personalizables, permitiendo un acceso multiplataforma, mayor seguridad y nuevas funcionalidades adaptadas a las necesidades de la sección de Nefrología.<br><br><strong>Actualmente en producción:</strong> Backend alojado en Zeabur y Frontend en Vercel.</p>
+        </div>
+        <div class="bg-[#f1f5f9] dark:bg-[#233554] rounded-lg shadow-md p-5 max-w-xs flex-1 min-w-[220px] flex flex-col card-compact">
+          <h4 id="personal6-title" class="font-bold text-[#003380] dark:text-[#64ffda] mb-1">Contactos</h4>
+          <p id="personal6-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm mb-2">Aplicación de escritorio multiplataforma para la gestión de contactos, clientes y agenda. Este proyecto fue desarrollado para un cliente que solicitó una solución sencilla para gestionar sus clientes en su trabajo diario, quedando muy satisfecho con el resultado. Incluye CRUD avanzado, filtros de búsqueda, importación/exportación de datos y notificaciones. Interfaz intuitiva y soporte para múltiples usuarios.</p>
+          <a id="personal6-link" href="https://github.com/jopasma7/Trabajos/tree/master/Sistema-Contactos" target="_blank" class="text-[#003380] dark:text-[#64ffda] hover:text-[#0a192f] dark:hover:text-white underline text-xs mt-auto">Ver en GitHub</a>
+        </div>
+      </div>
+      <div class="mt-10">
+        <h2 id="skills-title" class="text-xl font-semibold text-[#0a192f] dark:text-[#ccd6f6] mb-4 font-display">Habilidades</h2>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <span id="skill-js" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-js-square mr-2"></i> JavaScript (ES6+)</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:78%"></div>
             </div>
-      </div>
-      <div class="project-gallery">
-
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-react" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-react mr-2"></i> React</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:70%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-node" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-node-js mr-2"></i> Node.js</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:65%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-htmlcss" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-html5 mr-2"></i> HTML & <i class="fab fa-css3-alt ml-1"></i> CSS</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-python" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-python mr-2"></i> Python</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:60%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-java" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-java mr-2"></i> Java</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:55%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-git" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fab fa-git-alt mr-2"></i> Git & GitHub</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:70%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span id="skill-db" class="min-w-[120px] text-[#003380] dark:text-[#64ffda] font-semibold flex items-center"><i class="fas fa-database mr-2"></i> Bases de Datos</span>
+            <div class="flex-1 bg-[#e2e8f0] dark:bg-[#233554] rounded-full h-3 overflow-hidden">
+              <div class="bg-[#64ffda] dark:bg-[#64ffda] h-full rounded-full" style="width:65%"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <section id="formacion" class="section education">
-      <h2 class="titulo-experiencia">Formación</h2>
-      <p style="color:var(--accent);max-width:700px;margin-bottom:2rem;">
-        Mi recorrido universitario ha sido largo y lleno de aprendizajes, comenzando en 2013 y extendiéndose hasta 2026. No ha sido un camino lineal: por motivos económicos y personales, tuve que compaginar mis estudios con el trabajo y otras responsabilidades, lo que me obligó a pausar y retomar la carrera en varias ocasiones. Es importante destacar que este retraso nunca se debió a suspensos: todo lo que matriculé lo superé con esfuerzo y dedicación. Además, todos esos años me sirvieron para seguir aprendiendo y creciendo; no fueron en absoluto un descanso ni una pausa, sino una etapa activa de desarrollo personal y profesional. Sin embargo, nunca perdí la motivación ni las ganas de superarme. Cada año, cada reto y cada asignatura han forjado en mí una gran resiliencia, constancia y pasión por la informática. Hoy, a punto de finalizar el grado, miro atrás con orgullo por no haberme rendido y por haber convertido cada obstáculo en una oportunidad de crecimiento personal y profesional.
-      </p>
-      <div class="timeline">
-        <div class="timeline-item">
-        <h3>Grado en Ingeniería Informática</h3>
-          <p>Universidad Politécnica de Valencia - Campus de Alcoy.<br>
-          Formación integral en desarrollo de software, bases de datos, arquitectura de sistemas y gestión de proyectos tecnológicos.</p>  
+    <section id="formacion" class="section pt-12 pb-10">
+      <h2 id="edu-title" class="text-2xl md:text-3xl font-bold text-[#003380] dark:text-[#64ffda] mb-4 font-display">Formación</h2>
+      <p id="edu-desc" class="mb-8 text-[#64748b] dark:text-[#8892b0] max-w-2xl">Mi recorrido universitario ha sido largo y lleno de aprendizajes, comenzando en 2013 y extendiéndose hasta 2026. No ha sido un camino lineal: por motivos económicos y personales, tuve que compaginar mis estudios con el trabajo y otras responsabilidades, lo que me obligó a pausar y retomar la carrera en varias ocasiones. Es importante destacar que este retraso nunca se debió a suspensos: todo lo que matriculé lo superé con esfuerzo y dedicación. Además, todos esos años me sirvieron para seguir aprendiendo y creciendo; no fueron en absoluto un descanso ni una pausa, sino una etapa activa de desarrollo personal y profesional. Sin embargo, nunca perdí la motivación ni las ganas de superarme. Cada año, cada reto y cada asignatura han forjado en mí una gran resiliencia, constancia y pasión por la informática. Hoy, a punto de finalizar el grado, miro atrás con orgullo por no haberme rendido y por haber convertido cada obstáculo en una oportunidad de crecimiento personal y profesional.</p>
+      <div class="flex flex-col gap-8 border-l-2 border-[#003380] pl-6">
+        <div class="relative pb-8">
+          <span class="absolute -left-7 top-2 w-4 h-4 bg-[#003380] rounded-full border-4 border-[#f8fafc] dark:border-[#0a192f]"></span>
+          <h3 id="timeline-degree-title" class="text-lg font-semibold text-[#0a192f] dark:text-[#ccd6f6] font-display">Grado en Ingeniería Informática</h3>
+          <p id="timeline-degree-desc" class="text-[#64748b] dark:text-[#8892b0] text-sm">Universidad Politécnica de Valencia - Campus de Alcoy.<br>Formación integral en desarrollo de software, bases de datos, arquitectura de sistemas y gestión de proyectos tecnológicos.</p>
         </div>
-        <div class="timeline-item">
-          <h3>Idiomas</h3>
-          <ul>
-            <li><strong>Español:</strong> Nativo</li>
-            <li><strong>Valenciano:</strong> Nativo</li>
-            <li><strong>Inglés:</strong> Intermedio / Avanzado (capacidad para trabajar y comunicarme en entornos internacionales)</li>
+        <div class="relative pb-8">
+          <span class="absolute -left-7 top-2 w-4 h-4 bg-[#003380] rounded-full border-4 border-[#f8fafc] dark:border-[#0a192f]"></span>
+          <h3 id="timeline-lang-title" class="text-lg font-semibold text-[#0a192f] dark:text-[#ccd6f6] font-display">Idiomas</h3>
+          <ul id="timeline-lang-list" class="list-disc ml-6 text-[#64748b] dark:text-[#8892b0] text-sm">
+            <li id="timeline-lang-es"><strong>Español:</strong> Nativo</li>
+            <li id="timeline-lang-val"><strong>Valenciano:</strong> Nativo</li>
+            <li id="timeline-lang-en"><strong>Inglés:</strong> Intermedio / Avanzado (capacidad para trabajar y comunicarme en entornos internacionales)</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <h3>Información adicional</h3>
-          <ul>
-            <li>Carnet de conducir y vehículo propio</li>
-            <li>Disponibilidad para viajar y cambio de residencia</li>
-            <li>Residente en Benilloba (Alicante)</li>
+        <div class="relative">
+          <span class="absolute -left-7 top-2 w-4 h-4 bg-[#003380] rounded-full border-4 border-[#f8fafc] dark:border-[#0a192f]"></span>
+          <h3 id="timeline-extra-title" class="text-lg font-semibold text-[#0a192f] dark:text-[#ccd6f6] font-display">Información adicional</h3>
+          <ul id="timeline-extra-list" class="list-disc ml-6 text-[#64748b] dark:text-[#8892b0] text-sm">
+            <li id="timeline-extra-drive">Carnet de conducir y vehículo propio</li>
+            <li id="timeline-extra-move">Disponibilidad para viajar y cambio de residencia</li>
+            <li id="timeline-extra-city">Residente en Benilloba (Alicante)</li>
           </ul>
-        </div>    
+        </div>
       </div>
     </section>
-    <footer class="footer">
-      <p>&copy; 2026 Alejandro Pastor. Hecho con pasión y café ☕</p>
+    <footer class="bg-[#f8fafc] dark:bg-[#0a192f] py-6 mt-10 text-center">
+      <p id="footer-text" class="text-[#64748b] dark:text-[#8892b0] text-sm font-display">&copy; 2026 Alejandro Pastor. Hecho con pasión y café ☕</p>
     </footer>
   </main>
-  <script>
-    // Scroll suave para navegación robusto
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          const id = href.slice(1);
-          const target = document.getElementById(id);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Corregir el foco para navegadores
-            target.setAttribute('tabindex', '-1');
-            target.focus({ preventScroll: true });
-          }
-        }
-      });
-    });
-
-    // Tema oscuro/claro
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-      const themeLabel = document.getElementById('theme-label');
-      function updateThemeLabel() {
-        if(document.documentElement.classList.contains('light-theme')) {
-          themeLabel.textContent = 'Modo Claro';
-          themeBtn.querySelector('i').className = 'fas fa-sun';
-        } else {
-          themeLabel.textContent = 'Modo Oscuro';
-          themeBtn.querySelector('i').className = 'fas fa-moon';
-        }
+  <!-- JavaScript de controles y animaciones movido a main.js -->
+  <style>
+    .fade-in {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
+    }
+    .section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
+      will-change: opacity, transform;
+    }
+    .card-compact {
+      font-family: 'Inter', system-ui, sans-serif !important;
+      font-size: 0.97rem !important;
+      line-height: 1.45 !important;
+      padding: 1.1rem !important;
+      letter-spacing: 0.01em;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px 0 rgba(0,0,0,0.07);
+    }
+    .card-compact h4 {
+      font-size: 1.08rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 0.2em !important;
+      font-family: 'Inter', system-ui, sans-serif !important;
+      letter-spacing: 0.01em;
+    }
+    .card-compact p, .card-compact span, .card-compact a {
+      font-size: 0.97rem !important;
+      line-height: 1.45 !important;
+      font-family: 'Inter', system-ui, sans-serif !important;
+    }
+    @media (max-width: 600px) {
+      .card-compact {
+        font-size: 0.93rem !important;
+        padding: 0.7rem !important;
       }
-      themeBtn.addEventListener('click', () => {
-        document.documentElement.classList.toggle('light-theme');
-        if(document.documentElement.classList.contains('light-theme')) {
-          localStorage.setItem('theme', 'light');
-        } else {
-          localStorage.setItem('theme', 'dark');
-        }
-        updateThemeLabel();
-      });
-      updateThemeLabel();
+      .card-compact h4 {
+        font-size: 1rem !important;
+      }
     }
-
-    // Animación de entrada
-    document.querySelectorAll('.section').forEach(sec => {
-      sec.classList.add('fade-in');
-    });
-
-    // Formulario contacto (simulado)
-    const contactForm = document.getElementById('contactForm');
-    if(contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('formMsg').textContent = '¡Mensaje enviado! (Simulado)';
-        contactForm.reset();
-      });
-    }
-  </script>
+  </style>
 </body>
 </html>
