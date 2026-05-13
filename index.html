@@ -64,6 +64,22 @@
                           z-index: 1;
                         }
 
+                    /* Dropdown de idioma - tema claro y oscuro */
+                    #lang-options-sidebar, #lang-options-mobile {
+                      background: #f1f5f9;
+                      color: #0a192f;
+                    }
+                    html.dark #lang-options-sidebar,
+                    body.dark #lang-options-mobile {
+                      background: #232f45;
+                      color: #ccd6f6;
+                    }
+                    .lang-option-sidebar:hover {
+                      background: #e2e8f0;
+                    }
+                    html.dark .lang-option-sidebar:hover {
+                      background: #233554;
+                    }
                     /* Colores del sidebar móvil igual que escritorio */
                     @media (max-width: 700px) {
                       #mobile-sidebar {
@@ -376,11 +392,11 @@
             <span id="lang-selected-label-mobile">Español</span>
             <span style="font-size:0.9em;">▼</span>
           </div>
-          <div id="lang-options-mobile" style="display:none;position:absolute;top:2.1em;left:0;background:var(--background,#232f45);border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.12);overflow:hidden;min-width:140px;z-index:3100;">
-            <div class="lang-option-mobile" data-lang="es" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;color:var(--primary);background:none;font-size:1.08rem;">
+          <div id="lang-options-mobile" style="display:none;position:absolute;top:2.1em;left:0;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.12);overflow:hidden;min-width:140px;z-index:3100;">
+            <div class="lang-option-mobile" data-lang="es" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;background:none;font-size:1.08rem;">
               <img src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" style="display:inline-block;vertical-align:middle;"> <span>Español</span>
             </div>
-            <div class="lang-option-mobile" data-lang="en" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;color:var(--primary);background:none;font-size:1.08rem;">
+            <div class="lang-option-mobile" data-lang="en" style="display:flex;align-items:center;gap:0.5em;padding:0.4em 1em;cursor:pointer;background:none;font-size:1.08rem;">
               <img src="https://flagcdn.com/w20/gb.png" width="20" height="14" alt="English" style="display:inline-block;vertical-align:middle;"> <span>English</span>
             </div>
           </div>
@@ -415,11 +431,11 @@
           <span id="lang-selected-label-sidebar">Español</span>
           <span class="text-xs">▼</span>
         </div>
-        <div id="lang-options-sidebar" class="hidden absolute top-8 left-0 bg-[#232f45] rounded-md shadow-lg min-w-[140px] z-50">
-          <div class="lang-option-sidebar flex items-center gap-2 px-4 py-2 cursor-pointer text-[#003380] dark:text-[#64ffda] bg-transparent text-base hover:bg-[#233554]" data-lang="es">
+        <div id="lang-options-sidebar" class="hidden absolute top-8 left-0 rounded-md shadow-lg min-w-[140px] z-50">
+          <div class="lang-option-sidebar flex items-center gap-2 px-4 py-2 cursor-pointer bg-transparent text-base" data-lang="es">
             <img src="https://flagcdn.com/w20/es.png" width="20" height="14" alt="Español" class="inline-block align-middle"> <span>Español</span>
           </div>
-          <div class="lang-option-sidebar flex items-center gap-2 px-4 py-2 cursor-pointer text-[#003380] dark:text-[#64ffda] bg-transparent text-base hover:bg-[#233554]" data-lang="en">
+          <div class="lang-option-sidebar flex items-center gap-2 px-4 py-2 cursor-pointer bg-transparent text-base" data-lang="en">
             <img src="https://flagcdn.com/w20/gb.png" width="20" height="14" alt="English" class="inline-block align-middle"> <span>English</span>
           </div>
         </div>
