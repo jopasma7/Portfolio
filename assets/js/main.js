@@ -7,7 +7,7 @@ const translations = {
     navInicio: "Inicio",
     navExperiencia: "Experiencia",
     navFormacion: "Formación",
-    mainTitle: "¡Hola! Soy Alejandro Pastor",
+    mainTitle: '¡Hola! Soy <span class="gradient-title" style="font-size:2.8rem;line-height:1.05;vertical-align:middle;display:inline-block;">Alejandro Pastor</span>',
     mainSubtitle: "Creador de soluciones tecnológicas: frontend, backend, microservicios, bases de datos, APIs, automatización, integración y más. Apasionado por la innovación y la mejora continua.",
     mainIntro: `¡Hola! Gracias por visitar mi portafolio. Aquí comparto algunos de los proyectos y aprendizajes que más me han marcado en mi etapa universitaria y en mis primeros pasos en el mundo profesional.<br><br>
     Aunque mi camino en la tecnología acaba de empezar, cuento con una base sólida y experiencia práctica en desarrollo web, backend, microservicios y bases de datos. No soy un novato, pero tampoco lo sé todo: sigo aprendiendo y mejorando cada día, con muchas ganas de aportar y crecer en nuevos retos.<br><br>       
@@ -73,7 +73,9 @@ const translations = {
     timelineExtraDrive: "Carnet de conducir y vehículo propio",
     timelineExtraMove: "Disponibilidad para viajar y cambio de residencia",
     timelineExtraCity: "Residente en Benilloba (Alicante)",
-    footerText: "© 2026 Alejandro Pastor. Hecho con pasión y café ☕"
+    footerText: "© 2026 Alejandro Pastor. Hecho con pasión y café ☕",
+    themeDark: "Modo Oscuro",
+    themeLight: "Modo Claro"
   },
   en: {
     sidebarName: "Alex Pastor",
@@ -81,7 +83,7 @@ const translations = {
     navInicio: "Home",
     navExperiencia: "Experience",
     navFormacion: "Education",
-    mainTitle: "Hi! I'm Alex Pastor",
+    mainTitle: 'Hi! I\'m <span class="gradient-title" style="font-size:2.8rem;line-height:1.05;vertical-align:middle;display:inline-block;">Alex Pastor</span>',
     mainSubtitle: "Creator of technological solutions: frontend, backend, microservices, databases, APIs, automation, integration and more. Passionate about innovation and continuous improvement.",
     mainIntro: `Hi! Thanks for visiting my portfolio. Here I share some of the projects and lessons that have most marked me in my university stage and in my first steps in the professional world.<br><br>
     Although my journey in technology is just beginning, I have a solid foundation and practical experience in web development, backend, microservices, and databases. I'm not a novice, but I don't know everything either: I keep learning and improving every day, eager to contribute and grow in new challenges.<br><br>
@@ -147,13 +149,20 @@ const translations = {
     timelineExtraDrive: "Driver's license and own vehicle",
     timelineExtraMove: "Willing to travel and relocate",
     timelineExtraCity: "Resident in Benilloba (Alicante)",
-    footerText: "© 2026 Alex Pastor. Made with passion and coffee ☕"
+    footerText: "© 2026 Alex Pastor. Made with passion and coffee ☕",
+    themeDark: "Dark Mode",
+    themeLight: "Light Mode"
   }
 };
+
+let currentLang = localStorage.getItem('lang') || 'es';
 
 function setLang(lang) {
   // Traducción dinámica de todos los textos y enlaces
   const t = translations[lang] || translations.es;
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
   // Párrafo de introducción principal
   const elMainIntro = document.getElementById('main-intro');
   if (elMainIntro) elMainIntro.innerHTML = t.mainIntro;
@@ -171,6 +180,17 @@ function setLang(lang) {
   if (elNavInicio) elNavInicio.textContent = t.navInicio;
   if (elNavExperiencia) elNavExperiencia.textContent = t.navExperiencia;
   if (elNavFormacion) elNavFormacion.textContent = t.navFormacion;
+  // Mobile sidebar
+  const elMobileName = document.getElementById('mobile-sidebar-name');
+  const elMobileRole = document.getElementById('mobile-sidebar-role');
+  const elMobileNavInicio = document.getElementById('mobile-nav-inicio');
+  const elMobileNavExperiencia = document.getElementById('mobile-nav-experiencia');
+  const elMobileNavFormacion = document.getElementById('mobile-nav-formacion');
+  if (elMobileName) elMobileName.textContent = t.sidebarName;
+  if (elMobileRole) elMobileRole.textContent = t.sidebarRole;
+  if (elMobileNavInicio) elMobileNavInicio.textContent = t.navInicio;
+  if (elMobileNavExperiencia) elMobileNavExperiencia.textContent = t.navExperiencia;
+  if (elMobileNavFormacion) elMobileNavFormacion.textContent = t.navFormacion;
   // Main
   const elMainTitle = document.getElementById('main-title');
   const elMainSubtitle = document.getElementById('main-subtitle');
@@ -203,7 +223,7 @@ function setLang(lang) {
     const desc = document.getElementById(`personal${i}-desc`);
     const link = document.getElementById(`personal${i}-link`);
     if (title) title.textContent = t[`personal${i}Title`];
-    if (desc) desc.textContent = t[`personal${i}Desc`];
+    if (desc) desc.innerHTML = t[`personal${i}Desc`];
     if (link) link.textContent = t[`personal${i}Link`];
   }
   // Habilidades
@@ -212,7 +232,13 @@ function setLang(lang) {
   const skillIds = ['js', 'react', 'node', 'htmlcss', 'python', 'java', 'git', 'db'];
   skillIds.forEach(id => {
     const el = document.getElementById(`skill-${id}`);
-    if (el) el.innerHTML = t[`skill${id.charAt(0).toUpperCase() + id.slice(1)}`];
+    if (el) {
+      // Solo actualiza el nodo de texto, preservando el icono <i>
+      const labelSpan = el.querySelector('.skill-label');
+      if (labelSpan) {
+        labelSpan.textContent = t[`skill${id.charAt(0).toUpperCase() + id.slice(1)}`];
+      }
+    }
   });
   // Formación y timeline
   const elEduTitle = document.getElementById('edu-title');
@@ -242,6 +268,8 @@ function setLang(lang) {
   // Footer
   const elFooterText = document.getElementById('footer-text');
   if (elFooterText) elFooterText.innerHTML = t.footerText;
+  // Actualizar etiqueta del botón de tema con el idioma nuevo
+  updateThemeLabels();
 }
 
 // Dropdown de idioma en sidebar (escritorio)
@@ -290,9 +318,18 @@ function setupDropdownSidebar() {
 // JavaScript extraído de index.html para optimización de rendimiento
 
 // Tema oscuro/claro y lógica de controles
-if (localStorage.getItem('theme') === 'light') {
-  document.documentElement.classList.add('light-theme');
-}
+// Aplica el tema guardado antes de que el DOM se pinte para evitar parpadeo
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.documentElement.classList.add('light-theme');
+    document.documentElement.classList.remove('dark');
+  } else {
+    // Oscuro por defecto
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light-theme');
+  }
+})();
 
 // Hamburguesa móvil y controles en menú móvil
 function setLangMobile(lang) {
@@ -336,47 +373,49 @@ function setupDropdownMobile() {
   }
 }
 
-function setThemeBtns() {
+function updateThemeLabels() {
+  const root = document.documentElement;
+  const body = document.body;
   const btnMobile = document.getElementById('theme-toggle-mobile');
   const labelMobile = document.getElementById('theme-label-mobile');
   const btnSidebar = document.getElementById('theme-toggle-sidebar');
   const labelSidebar = document.getElementById('theme-label-sidebar');
-  const root = document.documentElement;
-  const body = document.body;
-  function updateThemeLabels() {
-    const isLight = root.classList.contains('light-theme');
-    if (labelMobile && btnMobile) {
-      labelMobile.textContent = isLight ? 'Modo Claro' : 'Modo Oscuro';
-      btnMobile.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-    }
-    if (labelSidebar && btnSidebar) {
-      labelSidebar.textContent = isLight ? 'Modo Claro' : 'Modo Oscuro';
-      btnSidebar.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-    }
-    // Manejar clases para Tailwind dark mode
-    if (isLight) {
-      body.classList.remove('dark');
-      body.classList.add('light-theme');
-      root.classList.remove('dark');
-      root.classList.add('light-theme');
-    } else {
-      body.classList.remove('light-theme');
-      body.classList.add('dark');
-      root.classList.remove('light-theme');
-      root.classList.add('dark');
-    }
+  const isLight = root.classList.contains('light-theme');
+  const t = translations[currentLang] || translations.es;
+  const label = isLight ? t.themeLight : t.themeDark;
+  if (labelMobile && btnMobile) {
+    labelMobile.textContent = label;
+    btnMobile.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
   }
+  if (labelSidebar && btnSidebar) {
+    labelSidebar.textContent = label;
+    btnSidebar.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+  }
+  if (isLight) {
+    body.classList.remove('dark');
+    body.classList.add('light-theme');
+    root.classList.remove('dark');
+    root.classList.add('light-theme');
+  } else {
+    body.classList.remove('light-theme');
+    body.classList.add('dark');
+    root.classList.remove('light-theme');
+    root.classList.add('dark');
+  }
+}
+
+function setThemeBtns() {
+  const root = document.documentElement;
   function toggleTheme() {
     root.classList.toggle('light-theme');
-    if(root.classList.contains('light-theme')) {
-      localStorage.setItem('theme', 'light');
-    } else {
-      localStorage.setItem('theme', 'dark');
-    }
+    localStorage.setItem('theme', root.classList.contains('light-theme') ? 'light' : 'dark');
     updateThemeLabels();
   }
+  const btnMobile = document.getElementById('theme-toggle-mobile');
+  const btnSidebar = document.getElementById('theme-toggle-sidebar');
   if (btnMobile) btnMobile.addEventListener('click', toggleTheme);
   if (btnSidebar) btnSidebar.addEventListener('click', toggleTheme);
+  // Sincroniza body al iniciar
   updateThemeLabels();
 }
 setupDropdownMobile();
@@ -462,6 +501,15 @@ function fadeInSections() {
 }
 window.addEventListener('DOMContentLoaded', fadeInSections);
 window.addEventListener('scroll', fadeInSections);
+
+// Restaurar idioma guardado al cargar la página
+(function() {
+  const savedLang = localStorage.getItem('lang') || 'es';
+  if (savedLang === 'en') {
+    setLangSidebar('en');
+    setLangMobile('en');
+  }
+})();
 
 // Formulario contacto (simulado)
 const contactForm = document.getElementById('contactForm');

@@ -2,7 +2,7 @@
 node_modules/
 
 # Build outputs
-assets/css/tailwind.css
+# assets/css/tailwind.css  <- must be tracked for GitHub Pages (no build step)
 
 # System files
 .DS_Store
