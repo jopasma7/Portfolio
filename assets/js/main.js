@@ -34,6 +34,8 @@ const translations = {
     expPersonalTitle: "Proyectos Personales",
     lottusRole: "Fundador & Desarrollador Principal",
     lottusDate: "2024 — Presente",
+    lottusPetaloLabel: "Pétalo — Gestión de Floristerías",
+    lottusMemorizLabel: "Memorix — Gestión de Cementerios",
     lottusDesc: "Empresa de software que fundé y donde soy el principal desarrollador. Especializados en desarrollo y comercialización de soluciones SaaS para gestión empresarial. Actualmente con dos productos en producción y nuevas soluciones en desarrollo. Herramientas potentes, accesibles y fáciles de usar para autónomos y pequeños negocios.",
     personal1Title: "Pétalo",
     personal1Desc: "Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js.",
@@ -121,6 +123,8 @@ const translations = {
     expPersonalTitle: "Personal Projects",
     lottusRole: "Founder & Lead Developer",
     lottusDate: "2024 — Present",
+    lottusPetaloLabel: "Pétalo — Florist Shop Management",
+    lottusMemorizLabel: "Memorix — Cemetery Management",
     lottusDesc: "Software company I founded where I am the lead developer. Specialized in developing and selling SaaS solutions for business management. Two products in production with new solutions in development. Powerful, accessible tools for freelancers and small businesses.",
     personal1Title: "Pétalo",
     personal1Desc: "Desktop app for comprehensive florist shop management: sales, inventory, suppliers, clients and reports. Includes admin panel, visual dashboard and user system. Built with Electron and Node.js.",
@@ -273,6 +277,10 @@ function setLang(lang) {
   if (elLottusRole) elLottusRole.textContent = t.lottusRole;
   if (elLottusDate) elLottusDate.textContent = t.lottusDate;
   if (elLottusDesc) elLottusDesc.textContent = t.lottusDesc;
+  const elPetaloLabel = document.getElementById('lottus-petalo-label');
+  const elMemorizLabel = document.getElementById('lottus-memorix-label');
+  if (elPetaloLabel) elPetaloLabel.textContent = t.lottusPetaloLabel;
+  if (elMemorizLabel) elMemorizLabel.textContent = t.lottusMemorizLabel;
 
   // Proyectos universitarios
   for (let i = 1; i <= 5; i++) {
