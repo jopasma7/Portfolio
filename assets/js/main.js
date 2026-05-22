@@ -84,7 +84,8 @@ const translations = {
     timelineExtraCity: "Residente en Benilloba (Alicante)",
     contactTitle: "Contacto",
     contactDesc: "¿Tienes un proyecto en mente o quieres hablar? Estoy disponible para nuevas oportunidades.",
-    contactLocation: "Santo Tomás nº8, Benilloba, Alicante",
+    contactPhoneLabel: "Teléfono",
+    contactEmailLabel: "Email",
     footerText: "© 2026 Alejandro Pastor. Hecho con pasión y café ☕",
     datePresent: "Presente",
     themeDark: "Modo Oscuro",
@@ -174,7 +175,8 @@ const translations = {
     timelineExtraCity: "Resident in Benilloba (Alicante)",
     contactTitle: "Contact",
     contactDesc: "Have a project in mind or want to talk? I'm available for new opportunities.",
-    contactLocation: "Santo Tomás nº8, Benilloba, Alicante",
+    contactPhoneLabel: "Phone",
+    contactEmailLabel: "Email",
     footerText: "© 2026 Alex Pastor. Made with passion and coffee ☕",
     datePresent: "Present",
     themeDark: "Dark Mode",
@@ -252,7 +254,8 @@ function setLang(lang) {
     'timeline-extra-city': t.timelineExtraCity,
     'contact-title': t.contactTitle,
     'contact-desc': t.contactDesc,
-    'contact-location': t.contactLocation,
+    'contact-phone-label': t.contactPhoneLabel,
+    'contact-email-label': t.contactEmailLabel,
     'footer-text': t.footerText
   };
   Object.entries(textIds).forEach(([id, val]) => {
