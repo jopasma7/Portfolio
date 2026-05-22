@@ -35,12 +35,16 @@ const translations = {
     uni5Desc: "Plataforma web para la gestión de alojamientos turísticos, reservas y valoraciones. Creada inicialmente con microservicios independientes, que luego fueron integrados de forma separada. Incluye arquitectura MVC, control de versiones en GitHub y gestión de errores con logs detallados.",
     uni5Tech: "TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservicios, Logs",
     expPersonalTitle: "Proyectos Personales",
-    personal1Title: "Floristería",
+    lottusRole: "Fundador & Desarrollador Principal",
+    lottusDesc: "Lottus Company es una empresa de software que fundé y en la que soy el principal desarrollador. Nos especializamos en el desarrollo y comercialización de soluciones SaaS y productos digitales orientados a la gestión empresarial. Actualmente contamos con dos productos en producción y en constante evolución, con nuevas soluciones en desarrollo. Nuestra misión es ofrecer herramientas potentes, accesibles y fáciles de usar para autónomos, pequeños negocios y empresas.",
+    personal1Title: "Pétalo",
     personal1Desc: "Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js para entornos Windows y multiplataforma.",
     personal1Link: "Ver en GitHub",
-    personal2Title: "Cementerio",
+    personal1LottusLink: "Ver en Lottus",
+    personal2Title: "Memorix",
     personal2Desc: "Sistema de gestión de cementerios que permite registrar ubicaciones, gestionar concesiones, administrar pagos y mantener un histórico de movimientos. La aplicación facilita saber dónde están enterradas las personas, qué espacios hay libres y poder venderlos o reasignarlos fácilmente. Incluye búsqueda avanzada, generación de informes y copias de seguridad automáticas.",
     personal2Link: "Ver en GitHub",
+    personal2LottusLink: "Ver en Lottus",
     personal3Title: "Restaurante",
     personal3Desc: "Plantilla base para aplicaciones de gestión de menús y comidas en comedores, restaurantes o eventos. Permite crear menús, asignar platos, gestionar ingredientes y controlar el stock de alimentos. Estructura modular y personalizable.",
     personal3Link: "Ver en GitHub",
@@ -111,12 +115,16 @@ const translations = {
     uni5Desc: "Web platform for managing tourist accommodations, reservations and reviews. Initially created with independent microservices, later integrated separately. Includes MVC architecture, GitHub version control and error management with detailed logs.",
     uni5Tech: "TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservices, Logs",
     expPersonalTitle: "Personal Projects",
-    personal1Title: "Florist Shop",
+    lottusRole: "Founder & Lead Developer",
+    lottusDesc: "Lottus Company is a software company I founded and where I am the lead developer. We specialize in the development and sale of SaaS solutions and digital products focused on business management. We currently have two products in production and constantly evolving, with new solutions in development. Our mission is to offer powerful, accessible, and easy-to-use tools for freelancers, small businesses, and companies.",
+    personal1Title: "Pétalo",
     personal1Desc: "Desktop app for comprehensive management of florist shops: sales, inventory, suppliers, clients and report generation. Includes admin panel, visual dashboard and user system. Developed with Electron and Node.js for Windows and cross-platform.",
     personal1Link: "View on GitHub",
-    personal2Title: "Cemetery",
+    personal1LottusLink: "View on Lottus",
+    personal2Title: "Memorix",
     personal2Desc: "Cemetery management system to register locations, manage concessions, handle payments and keep a history of movements. The app makes it easy to know where people are buried, which spaces are free and to sell or reassign them easily. Includes advanced search, report generation and automatic backups.",
     personal2Link: "View on GitHub",
+    personal2LottusLink: "View on Lottus",
     personal3Title: "Restaurant",
     personal3Desc: "Base template for menu and meal management apps in canteens, restaurants or events. Allows menu creation, dish assignment, ingredient management and food stock control. Modular and customizable structure.",
     personal3Link: "View on GitHub",
@@ -215,6 +223,11 @@ function setLang(lang) {
     if (desc) desc.textContent = t[`uni${i}Desc`];
     if (tech) tech.textContent = t[`uni${i}Tech`];
   }
+  // Lottus Company
+  const elLottusRole = document.getElementById('lottus-role');
+  const elLottusDesc = document.getElementById('lottus-desc');
+  if (elLottusRole) elLottusRole.textContent = t.lottusRole;
+  if (elLottusDesc) elLottusDesc.textContent = t.lottusDesc;
   // Proyectos personales
   const elExpPersonalTitle = document.getElementById('exp-personal-title');
   if (elExpPersonalTitle) elExpPersonalTitle.textContent = t.expPersonalTitle;
@@ -226,6 +239,11 @@ function setLang(lang) {
     if (desc) desc.innerHTML = t[`personal${i}Desc`];
     if (link) link.textContent = t[`personal${i}Link`];
   }
+  // Enlaces Lottus de Pétalo y Memorix
+  const elP1Lottus = document.getElementById('personal1-lottus-link');
+  const elP2Lottus = document.getElementById('personal2-lottus-link');
+  if (elP1Lottus) elP1Lottus.textContent = t.personal1LottusLink;
+  if (elP2Lottus) elP2Lottus.textContent = t.personal2LottusLink;
   // Habilidades
   const elSkillsTitle = document.getElementById('skills-title');
   if (elSkillsTitle) elSkillsTitle.textContent = t.skillsTitle;
