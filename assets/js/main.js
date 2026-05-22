@@ -86,6 +86,7 @@ const translations = {
     contactDesc: "¿Tienes un proyecto en mente o quieres hablar? Estoy disponible para nuevas oportunidades.",
     contactLocation: "Santo Tomás nº8, Benilloba, Alicante",
     footerText: "© 2026 Alejandro Pastor. Hecho con pasión y café ☕",
+    datePresent: "Presente",
     themeDark: "Modo Oscuro",
     themeLight: "Modo Claro"
   },
@@ -175,6 +176,7 @@ const translations = {
     contactDesc: "Have a project in mind or want to talk? I'm available for new opportunities.",
     contactLocation: "Santo Tomás nº8, Benilloba, Alicante",
     footerText: "© 2026 Alex Pastor. Made with passion and coffee ☕",
+    datePresent: "Present",
     themeDark: "Dark Mode",
     themeLight: "Light Mode"
   }
@@ -303,6 +305,9 @@ function setLang(lang) {
     if (desc) desc.innerHTML = t[`personal${i}Desc`];
     if (link) link.textContent = t[`personal${i}Link`];
   }
+  // Traducir "Presente/Present" en todas las fechas
+  document.querySelectorAll('.date-present').forEach(el => { el.textContent = t.datePresent; });
+
   const elP1Lottus = document.getElementById('personal1-lottus-link');
   const elP2Lottus = document.getElementById('personal2-lottus-link');
   if (elP1Lottus) elP1Lottus.textContent = t.personal1LottusLink;
