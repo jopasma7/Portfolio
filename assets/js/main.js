@@ -1,5 +1,4 @@
-// Función global para cambiar idioma (placeholder, puedes expandir para traducir toda la web)
-// Diccionario de traducciones ES/EN para los textos principales
+// Diccionario de traducciones ES/EN
 const translations = {
   es: {
     sidebarName: "Alejandro Pastor",
@@ -7,17 +6,15 @@ const translations = {
     navInicio: "Inicio",
     navExperiencia: "Experiencia",
     navFormacion: "Formación",
+    navContacto: "Contacto",
     mainTitle: '¡Hola! Soy <span class="gradient-title" style="font-size:2.8rem;line-height:1.05;vertical-align:middle;display:inline-block;">Alejandro Pastor</span>',
-    mainSubtitle: "Creador de soluciones tecnológicas: frontend, backend, microservicios, bases de datos, APIs, automatización, integración y más. Apasionado por la innovación y la mejora continua.",
-    mainIntro: `¡Hola! Gracias por visitar mi portafolio. Aquí comparto algunos de los proyectos y aprendizajes que más me han marcado en mi etapa universitaria y en mis primeros pasos en el mundo profesional.<br><br>
-    Aunque mi camino en la tecnología acaba de empezar, cuento con una base sólida y experiencia práctica en desarrollo web, backend, microservicios y bases de datos. No soy un novato, pero tampoco lo sé todo: sigo aprendiendo y mejorando cada día, con muchas ganas de aportar y crecer en nuevos retos.<br><br>       
-    Mi nombre es Alejandro, tengo 30 años y este año estoy finalizando mi Trabajo de Fin de Grado en Ingeniería Informática, especialidad en Tecnologías de la Información. Mi pasión por la tecnología y la programación comenzó desde muy pequeño, entre los 10 y 15 años, antes incluso de recibir clases de informática en el colegio, ya creaba mis propios plugins en Java para juegos como Minecraft, así como scripts en JavaScript y C para juegos en línea de navegador, desde títulos medievales de construcción hasta juegos de carreras.<br><br>
-    Inicié mi carrera universitaria a una edad temprana, pero por motivos económicos tuve que interrumpirla temporalmente. Mi familia no podía apoyarme económicamente y tuve que trabajar en diversos sectores como hostelería, administración pública, construcción, gasolineras... para poder costear mis estudios y mantenerme. Esta etapa me enseñó el valor del esfuerzo, la resiliencia y la importancia de perseguir mis sueños.<br><br>
-    A lo largo de estos años, nunca dejé de aprender ni de crear. He desarrollado proyectos personales tanto para mi propio uso como para seguir creciendo profesionalmente. Entre ellos destacan bots para Discord y Telegram utilizando Python, aplicaciones de escritorio con Electron (basado en Chromium y tecnologías web como HTML, CSS y JavaScript), y soluciones de gestión para negocios como floristerías y cafeterías, así como aplicaciones para la gestión de clientes, contactos y cementerios, primero como aplicaciones de escritorio y posteriormente migradas a aplicaciones web con frontend y backend. Para ello, he utilizado tecnologías como Node.js, React, bases de datos relacionales (SQL, PostgreSQL) y no relacionales (MongoDB, Redis).<br><br>
-    Aunque aún no he tenido la oportunidad de aplicar todo este conocimiento en una empresa del sector tecnológico, mi experiencia es sólida y real. Estoy convencido de que puedo adaptarme rápidamente a cualquier entorno profesional, aportar valor desde el primer día y seguir aprendiendo y creciendo junto a mi equipo.<br><br>
-    Mi camino apenas comienza, pero llego con una base firme, pasión por la tecnología y muchas ganas de afrontar nuevos retos.`,
-    expTitle: "Experiencia y Proyectos Reales",
-    expDesc: "Aunque aún no he trabajado en empresas del sector tecnológico, he desarrollado diversos proyectos y soluciones para clientes independientes y para mi propio aprendizaje. Mi experiencia se basa en la creación de aplicaciones reales, resolviendo necesidades concretas y colaborando en pequeños encargos, lo que me ha permitido adquirir habilidades prácticas y una visión profesional del desarrollo de software.",
+    mainSubtitle: "Ingeniero en Software · Fundador de Lottus Company · Full-Stack, Backend, Microservicios y Bases de Datos",
+    mainIntro: `Ingeniero en Software con experiencia práctica <strong>desde 2020</strong>, especializado en desarrollo web full-stack, backend, microservicios y bases de datos. Fundador y desarrollador principal de <a href="https://lottuscompany.com/" target="_blank" rel="noopener noreferrer" style="color:#003380;text-decoration:underline;" class="dark-link-teal">Lottus Company</a>, empresa de software con productos SaaS en producción.<br><br>
+    A punto de finalizar el Grado en Ingeniería Informática (UPV, Campus Alcoy). Mi pasión por la tecnología comenzó a los 10 años: creaba plugins en Java para Minecraft y scripts en JavaScript y C para juegos de navegador, antes de recibir ninguna clase de informática.<br><br>
+    He compaginado mis estudios con trabajo en hostelería, administración pública, construcción y otros sectores durante más de 8 años, lo que me ha forjado una gran resiliencia y disciplina. Nunca dejé de aprender ni de crear: bots en Python, aplicaciones de escritorio con Electron y soluciones web con Node.js, React, SQL y NoSQL.<br><br>
+    <strong>Listo para aportar valor desde el primer día en cualquier equipo tecnológico.</strong>`,
+    expTitle: "Experiencia y Proyectos",
+    expDesc: "Desarrollador freelance desde 2020, con proyectos reales en producción para clientes y uso propio. Fundador de Lottus Company (2024), empresa de software especializada en soluciones SaaS para gestión empresarial.",
     expUniTitle: "Proyectos Universitarios",
     uni1Title: "Gestor de Tareas Inteligente",
     uni1Desc: "Aplicación web para organizar tareas personales y profesionales, con recordatorios inteligentes, sincronización en la nube e interfaz intuitiva. Permite gestionar proyectos, establecer prioridades y recibir notificaciones automáticas.",
@@ -32,43 +29,49 @@ const translations = {
     uni4Desc: "Aplicación de consola que simula una red social, con gestión de cuentas, autenticación, publicaciones, likes y retweets. Implementación de lógica de negocio y persistencia de datos.",
     uni4Tech: "JavaScript, Node.js, MongoDB",
     uni5Title: "Aplicación web de alquiler vacacional",
-    uni5Desc: "Plataforma web para la gestión de alojamientos turísticos, reservas y valoraciones. Creada inicialmente con microservicios independientes, que luego fueron integrados de forma separada. Incluye arquitectura MVC, control de versiones en GitHub y gestión de errores con logs detallados.",
+    uni5Desc: "Plataforma web para la gestión de alojamientos turísticos, reservas y valoraciones. Creada con microservicios independientes integrados de forma separada. Incluye arquitectura MVC, control de versiones en GitHub y gestión de errores con logs detallados.",
     uni5Tech: "TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservicios, Logs",
     expPersonalTitle: "Proyectos Personales",
     lottusRole: "Fundador & Desarrollador Principal",
-    lottusDesc: "Lottus Company es una empresa de software que fundé y en la que soy el principal desarrollador. Nos especializamos en el desarrollo y comercialización de soluciones SaaS y productos digitales orientados a la gestión empresarial. Actualmente contamos con dos productos en producción y en constante evolución, con nuevas soluciones en desarrollo. Nuestra misión es ofrecer herramientas potentes, accesibles y fáciles de usar para autónomos, pequeños negocios y empresas.",
+    lottusDate: "2024 — Presente",
+    lottusDesc: "Empresa de software que fundé y donde soy el principal desarrollador. Especializados en desarrollo y comercialización de soluciones SaaS para gestión empresarial. Actualmente con dos productos en producción y nuevas soluciones en desarrollo. Herramientas potentes, accesibles y fáciles de usar para autónomos y pequeños negocios.",
     personal1Title: "Pétalo",
-    personal1Desc: "Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js para entornos Windows y multiplataforma.",
+    personal1Desc: "Aplicación de escritorio para la gestión integral de floristerías: control de ventas, inventario, proveedores, clientes y generación de reportes. Incluye panel de administración, dashboard visual y sistema de usuarios. Desarrollada con Electron y Node.js.",
     personal1Link: "Ver en GitHub",
     personal1LottusLink: "Ver en Lottus",
     personal2Title: "Memorix",
-    personal2Desc: "Sistema de gestión de cementerios que permite registrar ubicaciones, gestionar concesiones, administrar pagos y mantener un histórico de movimientos. La aplicación facilita saber dónde están enterradas las personas, qué espacios hay libres y poder venderlos o reasignarlos fácilmente. Incluye búsqueda avanzada, generación de informes y copias de seguridad automáticas.",
+    personal2Desc: "Sistema de gestión de cementerios para registrar ubicaciones, gestionar concesiones, administrar pagos y mantener un histórico de movimientos. Facilita saber dónde están enterradas las personas, qué espacios hay libres y poder venderlos o reasignarlos. Incluye búsqueda avanzada, generación de informes y copias de seguridad automáticas.",
     personal2Link: "Ver en GitHub",
     personal2LottusLink: "Ver en Lottus",
     personal3Title: "Restaurante",
     personal3Desc: "Plantilla base para aplicaciones de gestión de menús y comidas en comedores, restaurantes o eventos. Permite crear menús, asignar platos, gestionar ingredientes y controlar el stock de alimentos. Estructura modular y personalizable.",
     personal3Link: "Ver en GitHub",
     personal4Title: "Pacientes (Nefrología)",
-    personal4Desc: "Aplicación diseñada específicamente para la sección de Nefrología, orientada a la gestión integral de pacientes. Permite crear, editar y listar pacientes, visualizando de forma clara sus accesos vasculares y el estado médico de cada uno. Incluye sincronización robusta entre base de datos local y la nube (Turso), registro de historiales médicos, citas, tratamientos y exportación de datos. Ideal para clínicas y consultas especializadas.",
+    personal4Desc: "Aplicación de escritorio diseñada para la sección de Nefrología: gestión integral de pacientes, accesos vasculares y estado médico. Incluye sincronización entre base de datos local y la nube (Turso), historial médico, citas, tratamientos y exportación de datos.",
     personal4Link: "Ver en GitHub",
-    personal5Title: "Pacientes (Nefrología) - Web",
-    personal5Desc: "Continuación y evolución del proyecto anterior, migrando la aplicación de gestión de pacientes de una solución basada en Electron a una aplicación web moderna. Esta nueva versión cuenta con un frontend y backend más robustos, escalables y personalizables, permitiendo un acceso multiplataforma, mayor seguridad y nuevas funcionalidades adaptadas a las necesidades de la sección de Nefrología.<br><br><strong>Actualmente en producción:</strong> Backend alojado en Zeabur y Frontend en Vercel.",
+    personal5Title: "Pacientes (Nefrología) — Web",
+    personal5Desc: "Evolución del proyecto anterior a aplicación web moderna. Frontend y backend más robustos, escalables y multiplataforma. Mayor seguridad y nuevas funcionalidades adaptadas a Nefrología.<br><br><strong>En producción:</strong> Backend en Zeabur · Frontend en Vercel.",
     personal6Title: "Contactos",
-    personal6Desc: "Aplicación de escritorio multiplataforma para la gestión de contactos, clientes y agenda. Este proyecto fue desarrollado para un cliente que solicitó una solución sencilla para gestionar sus clientes en su trabajo diario, quedando muy satisfecho con el resultado. Incluye CRUD avanzado, filtros de búsqueda, importación/exportación de datos y notificaciones. Interfaz intuitiva y soporte para múltiples usuarios.",
+    personal6Desc: "Aplicación de escritorio multiplataforma para gestión de contactos, clientes y agenda, desarrollada para un cliente. Incluye CRUD avanzado, filtros de búsqueda, importación/exportación de datos y notificaciones. Interfaz intuitiva con soporte para múltiples usuarios.",
     personal6Link: "Ver en GitHub",
-    skillsTitle: "Habilidades",
-    skillJs: "JavaScript (ES6+)",
+    expLaborTitle: "Experiencia Laboral Previa",
+    expLaborDesc: "Durante más de 8 años (2018–2026) compaginé mis estudios universitarios con trabajo en diversos sectores para poder costearlos. Esta etapa me forjó disciplina, resiliencia y capacidad de adaptación.",
+    expLaborSectors: "Hostelería · Administración Pública · Construcción · Gasolineras",
+    skillsTitle: "Habilidades Técnicas",
+    skillJs: "JavaScript / TypeScript",
     skillReact: "React",
     skillNode: "Node.js",
     skillHtmlcss: "HTML & CSS",
     skillPython: "Python",
     skillJava: "Java",
+    skillC: "C / C# / C++",
     skillGit: "Git & GitHub",
-    skillDb: "Bases de Datos",
+    skillDb: "Bases de Datos (SQL + NoSQL)",
     eduTitle: "Formación",
-    eduDesc: "Mi recorrido universitario ha sido largo y lleno de aprendizajes, comenzando en 2013 y extendiéndose hasta 2026. No ha sido un camino lineal: por motivos económicos y personales, tuve que compaginar mis estudios con el trabajo y otras responsabilidades, lo que me obligó a pausar y retomar la carrera en varias ocasiones. Es importante destacar que este retraso nunca se debió a suspensos: todo lo que matriculé lo superé con esfuerzo y dedicación. Además, todos esos años me sirvieron para seguir aprendiendo y creciendo; no fueron en absoluto un descanso ni una pausa, sino una etapa activa de desarrollo personal y profesional. Sin embargo, nunca perdí la motivación ni las ganas de superarme. Cada año, cada reto y cada asignatura han forjado en mí una gran resiliencia, constancia y pasión por la informática. Hoy, a punto de finalizar el grado, miro atrás con orgullo por no haberme rendido y por haber convertido cada obstáculo en una oportunidad de crecimiento personal y profesional.",
+    eduDesc: "Mi recorrido universitario comenzó en 2013 y se extiende hasta 2026. Un camino no lineal, compaginando estudios con trabajo y responsabilidades personales. Todo lo matriculado fue superado con esfuerzo y dedicación. Una etapa de crecimiento constante que me ha dado resiliencia, constancia y pasión por la informática.",
     timelineDegreeTitle: "Grado en Ingeniería Informática",
-    timelineDegreeDesc: "Universidad Politécnica de Valencia - Campus de Alcoy.<br>Formación integral en desarrollo de software, bases de datos, arquitectura de sistemas y gestión de proyectos tecnológicos.",
+    timelineDegreeDate: "2013 — 2026",
+    timelineDegreeDesc: "Universidad Politécnica de Valencia — Campus de Alcoy.<br>Especialidad en Tecnologías de la Información. Formación integral en desarrollo de software, bases de datos, arquitectura de sistemas y gestión de proyectos tecnológicos.",
     timelineLangTitle: "Idiomas",
     timelineLangEs: "<strong>Español:</strong> Nativo",
     timelineLangVal: "<strong>Valenciano:</strong> Nativo",
@@ -77,6 +80,9 @@ const translations = {
     timelineExtraDrive: "Carnet de conducir y vehículo propio",
     timelineExtraMove: "Disponibilidad para viajar y cambio de residencia",
     timelineExtraCity: "Residente en Benilloba (Alicante)",
+    contactTitle: "Contacto",
+    contactDesc: "¿Tienes un proyecto en mente o quieres hablar? Estoy disponible para nuevas oportunidades.",
+    contactLocation: "Santo Tomás nº8, Benilloba, Alicante",
     footerText: "© 2026 Alejandro Pastor. Hecho con pasión y café ☕",
     themeDark: "Modo Oscuro",
     themeLight: "Modo Claro"
@@ -87,76 +93,83 @@ const translations = {
     navInicio: "Home",
     navExperiencia: "Experience",
     navFormacion: "Education",
+    navContacto: "Contact",
     mainTitle: 'Hi! I\'m <span class="gradient-title" style="font-size:2.8rem;line-height:1.05;vertical-align:middle;display:inline-block;">Alex Pastor</span>',
-    mainSubtitle: "Creator of technological solutions: frontend, backend, microservices, databases, APIs, automation, integration and more. Passionate about innovation and continuous improvement.",
-    mainIntro: `Hi! Thanks for visiting my portfolio. Here I share some of the projects and lessons that have most marked me in my university stage and in my first steps in the professional world.<br><br>
-    Although my journey in technology is just beginning, I have a solid foundation and practical experience in web development, backend, microservices, and databases. I'm not a novice, but I don't know everything either: I keep learning and improving every day, eager to contribute and grow in new challenges.<br><br>
-    My name is Alex, I'm 30 years old and this year I'm finishing my Bachelor's Thesis in Computer Engineering, specializing in Information Technologies. My passion for technology and programming began at a very young age, between 10 and 15 years old, even before taking computer classes at school, I was already creating my own Java plugins for games like Minecraft, as well as JavaScript and C scripts for online browser games, from medieval building titles to racing games.<br><br>
-    I started my university career at an early age, but for economic reasons I had to interrupt it temporarily. My family couldn't support me financially and I had to work in various sectors such as hospitality, public administration, construction, gas stations... to pay for my studies and support myself. This stage taught me the value of effort, resilience, and the importance of pursuing my dreams.<br><br>
-    Over the years, I never stopped learning or creating. I have developed personal projects both for my own use and to continue growing professionally. Among them are bots for Discord and Telegram using Python, desktop applications with Electron (based on Chromium and web technologies like HTML, CSS, and JavaScript), and management solutions for businesses such as flower shops and coffee shops, as well as applications for managing clients, contacts, and cemeteries, first as desktop applications and later migrated to web applications with frontend and backend. For this, I have used technologies such as Node.js, React, relational databases (SQL, PostgreSQL), and non-relational databases (MongoDB, Redis).<br><br>
-    Although I have not yet had the opportunity to apply all this knowledge in a tech company, my experience is solid and real. I am convinced that I can quickly adapt to any professional environment, add value from day one, and continue learning and growing with my team.<br><br>
-    My journey is just beginning, but I arrive with a strong foundation, a passion for technology, and a great desire to face new challenges.`,
-    expTitle: "Experience and Real Projects",
-    expDesc: "Although I haven't worked in tech companies yet, I have developed various projects and solutions for independent clients and for my own learning. My experience is based on creating real applications, solving concrete needs and collaborating on small assignments, which has allowed me to acquire practical skills and a professional vision of software development.",
+    mainSubtitle: "Software Engineer · Founder of Lottus Company · Full-Stack, Backend, Microservices & Databases",
+    mainIntro: `Software Engineer with hands-on experience <strong>since 2020</strong>, specializing in full-stack web development, backend, microservices and databases. Founder and Lead Developer of <a href="https://lottuscompany.com/" target="_blank" rel="noopener noreferrer" style="color:#003380;text-decoration:underline;" class="dark-link-teal">Lottus Company</a>, a software company with SaaS products in production.<br><br>
+    About to complete my Bachelor's in Computer Engineering (UPV, Alcoy Campus). My passion for technology started at age 10: I was building Java plugins for Minecraft and JavaScript/C scripts for browser games before ever taking a CS class.<br><br>
+    I balanced my studies with 8+ years of work in hospitality, public administration, construction and other sectors — building resilience and discipline along the way. I never stopped learning: Python bots, Electron desktop apps, and web solutions with Node.js, React, SQL and NoSQL.<br><br>
+    <strong>Ready to add value from day one in any tech team.</strong>`,
+    expTitle: "Experience & Projects",
+    expDesc: "Freelance developer since 2020, with real projects in production for clients and personal use. Founder of Lottus Company (2024), a software company specializing in SaaS solutions for business management.",
     expUniTitle: "University Projects",
     uni1Title: "Smart Task Manager",
-    uni1Desc: "Web application to organize personal and professional tasks, with smart reminders, cloud sync and intuitive interface. Allows project management, setting priorities and receiving automatic notifications.",
+    uni1Desc: "Web application to organize personal and professional tasks, with smart reminders, cloud sync and intuitive interface. Allows project management, priority setting and automatic notifications.",
     uni1Tech: "React, Node.js, MongoDB",
     uni2Title: "Telegram Bot for Classroom Management",
-    uni2Desc: "Telegram bot for managing and requesting classrooms at the university. Allows user CRUD via commands, role assignment and reservation management, all backed by an SQL database model.",
+    uni2Desc: "Telegram bot for managing and requesting classrooms at the university. Allows user CRUD via commands, role assignment and reservation management, all backed by an SQL database.",
     uni2Tech: "Python, Telegram Bot API, SQL, User roles",
     uni3Title: "COVID Web App",
-    uni3Desc: "Web app to detect infected users in the area, similar to Pokémon Go: includes an interactive map where the user moves and can see nearby infected people in real time.",
+    uni3Desc: "Web app to detect infected users nearby, similar to Pokémon Go: interactive map where the user moves and can see nearby infected people in real time.",
     uni3Tech: "JavaScript, Node.js, MySQL, Map APIs",
     uni4Title: "Twitter-like Messaging System (CLI)",
-    uni4Desc: "Console application that simulates a social network, with account management, authentication, posts, likes and retweets. Business logic and data persistence implemented.",
+    uni4Desc: "Console app simulating a social network, with account management, authentication, posts, likes and retweets. Business logic and data persistence implemented.",
     uni4Tech: "JavaScript, Node.js, MongoDB",
     uni5Title: "Vacation Rental Web App",
-    uni5Desc: "Web platform for managing tourist accommodations, reservations and reviews. Initially created with independent microservices, later integrated separately. Includes MVC architecture, GitHub version control and error management with detailed logs.",
+    uni5Desc: "Web platform for managing tourist accommodations, reservations and reviews. Built with independent microservices integrated separately. MVC architecture, GitHub version control and error management with detailed logs.",
     uni5Tech: "TypeScript, Node.js, Express, MongoDB, MySQL, SQLite, Bootstrap, Microservices, Logs",
     expPersonalTitle: "Personal Projects",
     lottusRole: "Founder & Lead Developer",
-    lottusDesc: "Lottus Company is a software company I founded and where I am the lead developer. We specialize in the development and sale of SaaS solutions and digital products focused on business management. We currently have two products in production and constantly evolving, with new solutions in development. Our mission is to offer powerful, accessible, and easy-to-use tools for freelancers, small businesses, and companies.",
+    lottusDate: "2024 — Present",
+    lottusDesc: "Software company I founded where I am the lead developer. Specialized in developing and selling SaaS solutions for business management. Two products in production with new solutions in development. Powerful, accessible tools for freelancers and small businesses.",
     personal1Title: "Pétalo",
-    personal1Desc: "Desktop app for comprehensive management of florist shops: sales, inventory, suppliers, clients and report generation. Includes admin panel, visual dashboard and user system. Developed with Electron and Node.js for Windows and cross-platform.",
+    personal1Desc: "Desktop app for comprehensive florist shop management: sales, inventory, suppliers, clients and reports. Includes admin panel, visual dashboard and user system. Built with Electron and Node.js.",
     personal1Link: "View on GitHub",
     personal1LottusLink: "View on Lottus",
     personal2Title: "Memorix",
-    personal2Desc: "Cemetery management system to register locations, manage concessions, handle payments and keep a history of movements. The app makes it easy to know where people are buried, which spaces are free and to sell or reassign them easily. Includes advanced search, report generation and automatic backups.",
+    personal2Desc: "Cemetery management system for registering locations, managing concessions, handling payments and keeping movement history. Makes it easy to know where people are buried, which spaces are free and to sell or reassign them. Includes advanced search, report generation and automatic backups.",
     personal2Link: "View on GitHub",
     personal2LottusLink: "View on Lottus",
     personal3Title: "Restaurant",
     personal3Desc: "Base template for menu and meal management apps in canteens, restaurants or events. Allows menu creation, dish assignment, ingredient management and food stock control. Modular and customizable structure.",
     personal3Link: "View on GitHub",
     personal4Title: "Patients (Nephrology)",
-    personal4Desc: "App designed specifically for the Nephrology section, focused on comprehensive patient management. Allows creating, editing and listing patients, clearly visualizing their vascular accesses and medical status. Includes robust sync between local and cloud DB (Turso), medical history, appointments, treatments and data export. Ideal for clinics and specialized practices.",
+    personal4Desc: "Desktop app designed for the Nephrology section: comprehensive patient management, vascular accesses and medical status. Includes local-to-cloud sync (Turso), medical history, appointments, treatments and data export.",
     personal4Link: "View on GitHub",
-    personal5Title: "Patients (Nephrology) - Web",
-    personal5Desc: "Continuation and evolution of the previous project, migrating the patient management app from an Electron-based solution to a modern web app. This new version features a more robust, scalable and customizable frontend and backend, enabling multiplatform access, greater security and new features tailored to the needs of the Nephrology section.<br><br><strong>Currently in production:</strong> Backend hosted on Zeabur and Frontend on Vercel.",
+    personal5Title: "Patients (Nephrology) — Web",
+    personal5Desc: "Evolution of the previous project to a modern web app. More robust, scalable and multiplatform frontend and backend. Enhanced security and new features tailored to Nephrology.<br><br><strong>In production:</strong> Backend on Zeabur · Frontend on Vercel.",
     personal6Title: "Contacts",
-    personal6Desc: "Cross-platform desktop app for managing contacts, clients and agenda. This project was developed for a client who requested a simple solution to manage their clients in their daily work, being very satisfied with the result. Includes advanced CRUD, search filters, data import/export and notifications. Intuitive interface and support for multiple users.",
+    personal6Desc: "Cross-platform desktop app for managing contacts, clients and agenda, built for a client. Includes advanced CRUD, search filters, data import/export and notifications. Intuitive interface with multi-user support.",
     personal6Link: "View on GitHub",
-    skillsTitle: "Skills",
-    skillJs: "JavaScript (ES6+)",
+    expLaborTitle: "Previous Work Experience",
+    expLaborDesc: "Over 8 years (2018–2026) I combined my university studies with work in various sectors to fund them. This period built my discipline, resilience and adaptability.",
+    expLaborSectors: "Hospitality · Public Administration · Construction · Gas Stations",
+    skillsTitle: "Technical Skills",
+    skillJs: "JavaScript / TypeScript",
     skillReact: "React",
     skillNode: "Node.js",
     skillHtmlcss: "HTML & CSS",
     skillPython: "Python",
     skillJava: "Java",
+    skillC: "C / C# / C++",
     skillGit: "Git & GitHub",
-    skillDb: "Databases",
+    skillDb: "Databases (SQL + NoSQL)",
     eduTitle: "Education",
-    eduDesc: "My university journey has been long and full of learning, starting in 2013 and extending to 2026. It hasn't been a linear path: for economic and personal reasons, I had to combine my studies with work and other responsibilities, which forced me to pause and resume my degree several times. It's important to note that this delay was never due to failing: everything I enrolled in I passed with effort and dedication. Moreover, all those years helped me keep learning and growing; they were by no means a break or pause, but an active stage of personal and professional development. However, I never lost motivation or the desire to improve. Each year, each challenge and each subject have forged in me great resilience, perseverance and passion for computer science. Today, about to finish my degree, I look back with pride for not giving up and for turning every obstacle into an opportunity for personal and professional growth.",
+    eduDesc: "My university journey started in 2013 and runs through 2026. A non-linear path, balancing studies with work and personal responsibilities. Everything I enrolled in, I passed with effort and dedication. A period of constant growth that built resilience, perseverance and passion for computer science.",
     timelineDegreeTitle: "Bachelor's in Computer Engineering",
-    timelineDegreeDesc: "Polytechnic University of Valencia - Alcoy Campus.<br>Comprehensive training in software development, databases, systems architecture and technology project management.",
+    timelineDegreeDate: "2013 — 2026",
+    timelineDegreeDesc: "Polytechnic University of Valencia — Alcoy Campus.<br>Specialization in Information Technologies. Comprehensive training in software development, databases, systems architecture and technology project management.",
     timelineLangTitle: "Languages",
     timelineLangEs: "<strong>Spanish:</strong> Native",
     timelineLangVal: "<strong>Valencian:</strong> Native",
     timelineLangEn: "<strong>English:</strong> Intermediate / Advanced (able to work and communicate in international environments)",
-    timelineExtraTitle: "Additional information",
+    timelineExtraTitle: "Additional Information",
     timelineExtraDrive: "Driver's license and own vehicle",
     timelineExtraMove: "Willing to travel and relocate",
     timelineExtraCity: "Resident in Benilloba (Alicante)",
+    contactTitle: "Contact",
+    contactDesc: "Have a project in mind or want to talk? I'm available for new opportunities.",
+    contactLocation: "Santo Tomás nº8, Benilloba, Alicante",
     footerText: "© 2026 Alex Pastor. Made with passion and coffee ☕",
     themeDark: "Dark Mode",
     themeLight: "Light Mode"
@@ -166,54 +179,101 @@ const translations = {
 let currentLang = localStorage.getItem('lang') || 'es';
 
 function setLang(lang) {
-  // Traducción dinámica de todos los textos y enlaces
   const t = translations[lang] || translations.es;
   currentLang = lang;
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
-  // Párrafo de introducción principal
+
   const elMainIntro = document.getElementById('main-intro');
   if (elMainIntro) elMainIntro.innerHTML = t.mainIntro;
-  // Actualizar controles visuales
+
   setLangSidebar && setLangSidebar._internalCall !== true && setLangSidebar(lang);
   setLangMobile && setLangMobile._internalCall !== true && setLangMobile(lang);
+
   // Sidebar y navegación
-  const elSidebarName = document.getElementById('sidebar-name');
-  const elSidebarRole = document.getElementById('sidebar-role');
-  const elNavInicio = document.getElementById('nav-inicio');
-  const elNavExperiencia = document.getElementById('nav-experiencia');
-  const elNavFormacion = document.getElementById('nav-formacion');
-  if (elSidebarName) elSidebarName.textContent = t.sidebarName;
-  if (elSidebarRole) elSidebarRole.textContent = t.sidebarRole;
-  if (elNavInicio) elNavInicio.textContent = t.navInicio;
-  if (elNavExperiencia) elNavExperiencia.textContent = t.navExperiencia;
-  if (elNavFormacion) elNavFormacion.textContent = t.navFormacion;
+  ['sidebar-name','sidebar-role','nav-inicio','nav-experiencia','nav-formacion','nav-contacto'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const map = {
+      'sidebar-name': t.sidebarName,
+      'sidebar-role': t.sidebarRole,
+      'nav-inicio': t.navInicio,
+      'nav-experiencia': t.navExperiencia,
+      'nav-formacion': t.navFormacion,
+      'nav-contacto': t.navContacto
+    };
+    el.textContent = map[id];
+  });
+
   // Mobile sidebar
-  const elMobileName = document.getElementById('mobile-sidebar-name');
-  const elMobileRole = document.getElementById('mobile-sidebar-role');
-  const elMobileNavInicio = document.getElementById('mobile-nav-inicio');
-  const elMobileNavExperiencia = document.getElementById('mobile-nav-experiencia');
-  const elMobileNavFormacion = document.getElementById('mobile-nav-formacion');
-  if (elMobileName) elMobileName.textContent = t.sidebarName;
-  if (elMobileRole) elMobileRole.textContent = t.sidebarRole;
-  if (elMobileNavInicio) elMobileNavInicio.textContent = t.navInicio;
-  if (elMobileNavExperiencia) elMobileNavExperiencia.textContent = t.navExperiencia;
-  if (elMobileNavFormacion) elMobileNavFormacion.textContent = t.navFormacion;
+  const mobileMap = {
+    'mobile-sidebar-name': t.sidebarName,
+    'mobile-sidebar-role': t.sidebarRole,
+    'mobile-nav-inicio': t.navInicio,
+    'mobile-nav-experiencia': t.navExperiencia,
+    'mobile-nav-formacion': t.navFormacion,
+    'mobile-nav-contacto': t.navContacto
+  };
+  Object.entries(mobileMap).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  });
+
   // Main
   const elMainTitle = document.getElementById('main-title');
   const elMainSubtitle = document.getElementById('main-subtitle');
   if (elMainTitle) elMainTitle.innerHTML = t.mainTitle;
-  if (elMainSubtitle) {
-    elMainSubtitle.innerHTML = t.mainSubtitle;
-    // No tocar el color para mantener el color azul de Tailwind
-  }
-  // Experiencia y proyectos
-  const elExpTitle = document.getElementById('exp-title');
-  const elExpDesc = document.getElementById('exp-desc');
-  const elExpUniTitle = document.getElementById('exp-uni-title');
-  if (elExpTitle) elExpTitle.textContent = t.expTitle;
-  if (elExpDesc) elExpDesc.textContent = t.expDesc;
-  if (elExpUniTitle) elExpUniTitle.textContent = t.expUniTitle;
+  if (elMainSubtitle) elMainSubtitle.innerHTML = t.mainSubtitle;
+
+  // Experiencia
+  const textIds = {
+    'exp-title': t.expTitle,
+    'exp-desc': t.expDesc,
+    'exp-uni-title': t.expUniTitle,
+    'exp-personal-title': t.expPersonalTitle,
+    'exp-labor-title': t.expLaborTitle,
+    'exp-labor-desc': t.expLaborDesc,
+    'exp-labor-sectors': t.expLaborSectors,
+    'skills-title': t.skillsTitle,
+    'edu-title': t.eduTitle,
+    'edu-desc': t.eduDesc,
+    'timeline-degree-title': t.timelineDegreeTitle,
+    'timeline-degree-date': t.timelineDegreeDate,
+    'timeline-lang-title': t.timelineLangTitle,
+    'timeline-extra-title': t.timelineExtraTitle,
+    'timeline-extra-drive': t.timelineExtraDrive,
+    'timeline-extra-move': t.timelineExtraMove,
+    'timeline-extra-city': t.timelineExtraCity,
+    'contact-title': t.contactTitle,
+    'contact-desc': t.contactDesc,
+    'contact-location': t.contactLocation,
+    'footer-text': t.footerText
+  };
+  Object.entries(textIds).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  });
+
+  // innerHTML elements
+  const htmlIds = {
+    'timeline-degree-desc': t.timelineDegreeDesc,
+    'timeline-lang-es': t.timelineLangEs,
+    'timeline-lang-val': t.timelineLangVal,
+    'timeline-lang-en': t.timelineLangEn
+  };
+  Object.entries(htmlIds).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = val;
+  });
+
+  // Lottus
+  const elLottusRole = document.getElementById('lottus-role');
+  const elLottusDate = document.getElementById('lottus-date');
+  const elLottusDesc = document.getElementById('lottus-desc');
+  if (elLottusRole) elLottusRole.textContent = t.lottusRole;
+  if (elLottusDate) elLottusDate.textContent = t.lottusDate;
+  if (elLottusDesc) elLottusDesc.textContent = t.lottusDesc;
+
   // Proyectos universitarios
   for (let i = 1; i <= 5; i++) {
     const title = document.getElementById(`uni${i}-title`);
@@ -223,11 +283,7 @@ function setLang(lang) {
     if (desc) desc.textContent = t[`uni${i}Desc`];
     if (tech) tech.textContent = t[`uni${i}Tech`];
   }
-  // Lottus Company
-  const elLottusRole = document.getElementById('lottus-role');
-  const elLottusDesc = document.getElementById('lottus-desc');
-  if (elLottusRole) elLottusRole.textContent = t.lottusRole;
-  if (elLottusDesc) elLottusDesc.textContent = t.lottusDesc;
+
   // Proyectos personales
   const elExpPersonalTitle = document.getElementById('exp-personal-title');
   if (elExpPersonalTitle) elExpPersonalTitle.textContent = t.expPersonalTitle;
@@ -239,75 +295,37 @@ function setLang(lang) {
     if (desc) desc.innerHTML = t[`personal${i}Desc`];
     if (link) link.textContent = t[`personal${i}Link`];
   }
-  // Enlaces Lottus de Pétalo y Memorix
   const elP1Lottus = document.getElementById('personal1-lottus-link');
   const elP2Lottus = document.getElementById('personal2-lottus-link');
   if (elP1Lottus) elP1Lottus.textContent = t.personal1LottusLink;
   if (elP2Lottus) elP2Lottus.textContent = t.personal2LottusLink;
+
   // Habilidades
-  const elSkillsTitle = document.getElementById('skills-title');
-  if (elSkillsTitle) elSkillsTitle.textContent = t.skillsTitle;
-  const skillIds = ['js', 'react', 'node', 'htmlcss', 'python', 'java', 'git', 'db'];
-  skillIds.forEach(id => {
+  const skillMap = {
+    'js': 'skillJs', 'react': 'skillReact', 'node': 'skillNode',
+    'htmlcss': 'skillHtmlcss', 'python': 'skillPython', 'java': 'skillJava',
+    'c': 'skillC', 'git': 'skillGit', 'db': 'skillDb'
+  };
+  Object.entries(skillMap).forEach(([id, key]) => {
     const el = document.getElementById(`skill-${id}`);
     if (el) {
-      // Solo actualiza el nodo de texto, preservando el icono <i>
       const labelSpan = el.querySelector('.skill-label');
-      if (labelSpan) {
-        labelSpan.textContent = t[`skill${id.charAt(0).toUpperCase() + id.slice(1)}`];
-      }
+      if (labelSpan) labelSpan.textContent = t[key];
     }
   });
-  // Formación y timeline
-  const elEduTitle = document.getElementById('edu-title');
-  const elEduDesc = document.getElementById('edu-desc');
-  if (elEduTitle) elEduTitle.textContent = t.eduTitle;
-  if (elEduDesc) elEduDesc.textContent = t.eduDesc;
-  const elTimelineDegreeTitle = document.getElementById('timeline-degree-title');
-  const elTimelineDegreeDesc = document.getElementById('timeline-degree-desc');
-  if (elTimelineDegreeTitle) elTimelineDegreeTitle.textContent = t.timelineDegreeTitle;
-  if (elTimelineDegreeDesc) elTimelineDegreeDesc.innerHTML = t.timelineDegreeDesc;
-  const elTimelineLangTitle = document.getElementById('timeline-lang-title');
-  if (elTimelineLangTitle) elTimelineLangTitle.textContent = t.timelineLangTitle;
-  const elTimelineLangEs = document.getElementById('timeline-lang-es');
-  const elTimelineLangVal = document.getElementById('timeline-lang-val');
-  const elTimelineLangEn = document.getElementById('timeline-lang-en');
-  if (elTimelineLangEs) elTimelineLangEs.innerHTML = t.timelineLangEs;
-  if (elTimelineLangVal) elTimelineLangVal.innerHTML = t.timelineLangVal;
-  if (elTimelineLangEn) elTimelineLangEn.innerHTML = t.timelineLangEn;
-  const elTimelineExtraTitle = document.getElementById('timeline-extra-title');
-  if (elTimelineExtraTitle) elTimelineExtraTitle.textContent = t.timelineExtraTitle;
-  const elTimelineExtraDrive = document.getElementById('timeline-extra-drive');
-  const elTimelineExtraMove = document.getElementById('timeline-extra-move');
-  const elTimelineExtraCity = document.getElementById('timeline-extra-city');
-  if (elTimelineExtraDrive) elTimelineExtraDrive.textContent = t.timelineExtraDrive;
-  if (elTimelineExtraMove) elTimelineExtraMove.textContent = t.timelineExtraMove;
-  if (elTimelineExtraCity) elTimelineExtraCity.textContent = t.timelineExtraCity;
-  // Footer
-  const elFooterText = document.getElementById('footer-text');
-  if (elFooterText) elFooterText.innerHTML = t.footerText;
-  // Actualizar etiqueta del botón de tema con el idioma nuevo
+
   updateThemeLabels();
 }
 
-// Dropdown de idioma en sidebar (escritorio)
 function setLangSidebar(lang) {
   setLangSidebar._internalCall = true;
   setLang(lang);
   setLangSidebar._internalCall = false;
-  // Actualizar controles sidebar
   const flag = document.getElementById('lang-selected-flag-sidebar');
   const label = document.getElementById('lang-selected-label-sidebar');
   if (flag && label) {
-    if (lang === 'es') {
-      flag.src = 'https://flagcdn.com/w20/es.png';
-      flag.alt = 'Español';
-      label.textContent = 'Español';
-    } else {
-      flag.src = 'https://flagcdn.com/w20/gb.png';
-      flag.alt = 'English';
-      label.textContent = 'English';
-    }
+    if (lang === 'es') { flag.src = 'https://flagcdn.com/w20/es.png'; flag.alt = 'Español'; label.textContent = 'Español'; }
+    else { flag.src = 'https://flagcdn.com/w20/gb.png'; flag.alt = 'English'; label.textContent = 'English'; }
   }
 }
 
@@ -316,9 +334,7 @@ function setupDropdownSidebar() {
   const selected = document.getElementById('lang-selected-sidebar');
   const options = document.getElementById('lang-options-sidebar');
   if (selected && options) {
-    selected.addEventListener('click', () => {
-      options.classList.toggle('hidden');
-    });
+    selected.addEventListener('click', () => { options.classList.toggle('hidden'); });
     document.querySelectorAll('.lang-option-sidebar').forEach(opt => {
       opt.addEventListener('click', function() {
         setLangSidebar(this.getAttribute('data-lang'));
@@ -326,49 +342,35 @@ function setupDropdownSidebar() {
       });
     });
     document.addEventListener('click', function(e) {
-      if (!dropdown.contains(e.target)) {
-        options.classList.add('hidden');
-      }
+      if (!dropdown.contains(e.target)) options.classList.add('hidden');
     });
   }
 }
-// main.js
-// JavaScript extraído de index.html para optimización de rendimiento
 
-// Tema oscuro/claro y lógica de controles
-// Aplica el tema guardado antes de que el DOM se pinte para evitar parpadeo
+// Aplica el tema guardado (también en <head> inline para evitar FOUC)
 (function() {
   const saved = localStorage.getItem('theme');
   if (saved === 'light') {
     document.documentElement.classList.add('light-theme');
     document.documentElement.classList.remove('dark');
   } else {
-    // Oscuro por defecto
     document.documentElement.classList.add('dark');
     document.documentElement.classList.remove('light-theme');
   }
 })();
 
-// Hamburguesa móvil y controles en menú móvil
 function setLangMobile(lang) {
   setLangMobile._internalCall = true;
   setLang(lang);
   setLangMobile._internalCall = false;
-  // Actualizar controles móviles
   const flag = document.getElementById('lang-selected-flag-mobile');
   const label = document.getElementById('lang-selected-label-mobile');
   if (flag && label) {
-    if (lang === 'es') {
-      flag.src = 'https://flagcdn.com/w20/es.png';
-      flag.alt = 'Español';
-      label.textContent = 'Español';
-    } else {
-      flag.src = 'https://flagcdn.com/w20/gb.png';
-      flag.alt = 'English';
-      label.textContent = 'English';
-    }
+    if (lang === 'es') { flag.src = 'https://flagcdn.com/w20/es.png'; flag.alt = 'Español'; label.textContent = 'Español'; }
+    else { flag.src = 'https://flagcdn.com/w20/gb.png'; flag.alt = 'English'; label.textContent = 'English'; }
   }
 }
+
 function setupDropdownMobile() {
   const dropdown = document.getElementById('lang-dropdown-mobile');
   const selected = document.getElementById('lang-selected-mobile');
@@ -384,9 +386,7 @@ function setupDropdownMobile() {
       });
     });
     document.addEventListener('click', function(e) {
-      if (!dropdown.contains(e.target)) {
-        options.style.display = 'none';
-      }
+      if (!dropdown.contains(e.target)) options.style.display = 'none';
     });
   }
 }
@@ -410,15 +410,11 @@ function updateThemeLabels() {
     btnSidebar.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
   }
   if (isLight) {
-    body.classList.remove('dark');
-    body.classList.add('light-theme');
-    root.classList.remove('dark');
-    root.classList.add('light-theme');
+    body.classList.remove('dark'); body.classList.add('light-theme');
+    root.classList.remove('dark'); root.classList.add('light-theme');
   } else {
-    body.classList.remove('light-theme');
-    body.classList.add('dark');
-    root.classList.remove('light-theme');
-    root.classList.add('dark');
+    body.classList.remove('light-theme'); body.classList.add('dark');
+    root.classList.remove('light-theme'); root.classList.add('dark');
   }
 }
 
@@ -433,51 +429,53 @@ function setThemeBtns() {
   const btnSidebar = document.getElementById('theme-toggle-sidebar');
   if (btnMobile) btnMobile.addEventListener('click', toggleTheme);
   if (btnSidebar) btnSidebar.addEventListener('click', toggleTheme);
-  // Sincroniza body al iniciar
   updateThemeLabels();
 }
+
 setupDropdownMobile();
 setupDropdownSidebar();
 setThemeBtns();
 
+// Mobile sidebar
 const hamburger = document.getElementById('hamburger-menu');
 const mobileSidebar = document.getElementById('mobile-sidebar');
 const closeMobileSidebar = document.getElementById('close-mobile-sidebar');
+
+function closeMobileSidebarFn() {
+  if (!mobileSidebar) return;
+  mobileSidebar.style.transform = 'translateX(-100%)';
+  setTimeout(() => { mobileSidebar.style.display = 'none'; }, 250);
+}
+
 function updateHamburgerVisibility() {
   if (window.innerWidth <= 700) {
     if (hamburger) hamburger.style.display = 'flex';
   } else {
     if (hamburger) hamburger.style.display = 'none';
-    if (mobileSidebar) {
-      mobileSidebar.style.display = 'none';
-      mobileSidebar.style.transform = 'translateX(-100%)';
-    }
+    if (mobileSidebar) { mobileSidebar.style.display = 'none'; mobileSidebar.style.transform = 'translateX(-100%)'; }
   }
 }
 window.addEventListener('resize', updateHamburgerVisibility);
 window.addEventListener('DOMContentLoaded', updateHamburgerVisibility);
+
 if (hamburger && mobileSidebar && closeMobileSidebar) {
   hamburger.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent document click from firing
+    e.stopPropagation();
     mobileSidebar.style.display = 'flex';
     setTimeout(() => { mobileSidebar.style.transform = 'translateX(0)'; }, 10);
   });
-  closeMobileSidebar.addEventListener('click', () => {
-    mobileSidebar.style.transform = 'translateX(-100%)';
-    setTimeout(() => { mobileSidebar.style.display = 'none'; }, 250);
-  });
+  closeMobileSidebar.addEventListener('click', closeMobileSidebarFn);
   document.addEventListener('click', function(e) {
     if (window.innerWidth <= 700 && mobileSidebar.style.display === 'flex' && !mobileSidebar.contains(e.target) && e.target !== hamburger) {
-      mobileSidebar.style.transform = 'translateX(-100%)';
-      setTimeout(() => { mobileSidebar.style.display = 'none'; }, 250);
+      closeMobileSidebarFn();
     }
+  });
+  // Auto-cerrar al pulsar un enlace de navegación en móvil
+  mobileSidebar.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => setTimeout(closeMobileSidebarFn, 100));
   });
 }
 
-// Traducción completa ES/EN para todas las secciones
-// ... (puedes seguir moviendo el resto del JS aquí, por espacio lo corto)
-
-// Mostrar controles arriba solo en móvil, en sidebar solo en escritorio
 function updateControlsVisibility() {
   const sidebarControls = document.getElementById('sidebar-controls');
   const topControls = document.getElementById('top-controls');
@@ -492,8 +490,9 @@ function updateControlsVisibility() {
 window.addEventListener('resize', updateControlsVisibility);
 window.addEventListener('DOMContentLoaded', updateControlsVisibility);
 
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
     if (href && href.startsWith('#')) {
       const id = href.slice(1);
@@ -513,30 +512,60 @@ window.addEventListener('DOMContentLoaded', () => {
   if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 
-// Animación de entrada moderna: fade-in y slide-up en secciones
+// Fade-in sections on scroll
 function fadeInSections() {
   document.querySelectorAll('.section').forEach(sec => {
     const rect = sec.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 60) {
-      sec.classList.add('fade-in');
-    }
+    if (rect.top < window.innerHeight - 60) sec.classList.add('fade-in');
   });
 }
 window.addEventListener('DOMContentLoaded', fadeInSections);
 window.addEventListener('scroll', fadeInSections);
 
-// Restaurar idioma guardado al cargar la página
+// Active nav indicator via IntersectionObserver
+window.addEventListener('DOMContentLoaded', () => {
+  const sections = ['inicio', 'experiencia', 'formacion', 'contacto'];
+  const navLinks = {};
+  sections.forEach(id => {
+    navLinks[id] = [document.getElementById(`nav-${id}`), document.getElementById(`mobile-nav-${id}`)];
+  });
+
+  function setActive(id) {
+    sections.forEach(sid => {
+      navLinks[sid].forEach(link => {
+        if (!link) return;
+        if (sid === id) {
+          link.style.color = '#64ffda';
+          link.style.fontWeight = '800';
+        } else {
+          link.style.color = '';
+          link.style.fontWeight = '';
+        }
+      });
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { threshold: 0.25 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+});
+
+// Restaurar idioma guardado
 (function() {
   const savedLang = localStorage.getItem('lang') || 'es';
-  if (savedLang === 'en') {
-    setLangSidebar('en');
-    setLangMobile('en');
-  }
+  if (savedLang === 'en') { setLangSidebar('en'); setLangMobile('en'); }
 })();
 
 // Formulario contacto (simulado)
 const contactForm = document.getElementById('contactForm');
-if(contactForm) {
+if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     document.getElementById('formMsg').textContent = '¡Mensaje enviado! (Simulado)';
