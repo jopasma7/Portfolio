@@ -508,6 +508,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Inicializar iconos Lucide
+window.addEventListener('DOMContentLoaded', () => {
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+});
+
 // Animación de entrada moderna: fade-in y slide-up en secciones
 function fadeInSections() {
   document.querySelectorAll('.section').forEach(sec => {
