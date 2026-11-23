@@ -29,6 +29,14 @@ const translations = {
     f2List: `<li>Aplicación a medida (≈9.000 líneas) que sustituye el registro en papel: pacientes, accesos vasculares, complicaciones, historial, agenda de citas y profesionales.</li>
           <li>API REST con autenticación JWT, estadísticas e informes PDF exportables; versionado automatizado con GitHub Actions.</li>
           <li>Migración de la primera versión de escritorio (Electron + sincronización local/nube con Turso) a una aplicación web accesible desde cualquier dispositivo.</li>`,
+    f4Title: "Planificador táctico de ofensivas",
+    f4Tag: "En uso real por una tribu de ~25 jugadores · Demo pública",
+    f4List: `<li>Aplicación web para coordinar ataques masivos en un juego de estrategia online: planifica, asigna y sincroniza cientos de ofensivas de toda una tribu.</li>
+          <li><strong>Motor de asignación</strong> que optimiza moral, distancia y franjas horarias de cada jugador; asistente de 8 pasos para bombardeo, conquista y demolición.</li>
+          <li><strong>Mapa táctico</strong> en canvas con más de 10.000 pueblos y <strong>centro de operaciones en vivo</strong> donde controlador y jugadores marcan sus envíos.</li>
+          <li>Backend FastAPI + MongoDB (23 módulos de API), JWT con roles y accesos temporales por jugador, avisos por WhatsApp y despliegue con Docker. ≈28.000 líneas, 300+ commits.</li>`,
+    f4Demo: "Probar la demo",
+    f4Private: "Código privado · disponible bajo petición",
     f3Title: "Pétalo y Memorix · Software de gestión propio",
     f3Tag: "Publicados bajo mi marca Lottus Company",
     f3List: `<li>Dos aplicaciones de escritorio para Windows: gestión de floristerías (Pétalo) y de cementerios (Memorix).</li>
@@ -104,6 +112,14 @@ const translations = {
     f2List: `<li>Custom application (~9,000 lines) replacing paper records: patients, vascular accesses, complications, history, appointments and staff.</li>
           <li>REST API with JWT authentication, statistics and exportable PDF reports; automated versioning with GitHub Actions.</li>
           <li>Migrated the first desktop version (Electron + local/cloud sync with Turso) to a web app accessible from any device.</li>`,
+    f4Title: "Tactical attack planner",
+    f4Tag: "In real use by a ~25-player tribe · Public demo",
+    f4List: `<li>Web app to coordinate large-scale attacks in an online strategy game: plans, assigns and synchronizes hundreds of offensives for a whole tribe.</li>
+          <li><strong>Assignment engine</strong> optimizing morale, distance and each player's time windows; 8-step wizard for bombardment, conquest and demolition operations.</li>
+          <li><strong>Tactical map</strong> on canvas with 10,000+ villages and a <strong>live operations center</strong> where the controller and players mark their sends.</li>
+          <li>FastAPI + MongoDB backend (23 API modules), role-based JWT with temporary per-player access, WhatsApp alerts and Docker deployment. ~28,000 lines, 300+ commits.</li>`,
+    f4Demo: "Try the demo",
+    f4Private: "Private code · available on request",
     f3Title: "Pétalo & Memorix · Own management software",
     f3Tag: "Released under my own brand, Lottus Company",
     f3List: `<li>Two Windows desktop apps: flower shop management (Pétalo) and cemetery management (Memorix).</li>

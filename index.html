@@ -487,6 +487,18 @@
       .pf-skill-row { display:grid; grid-template-columns:150px 1fr; gap:.6rem; align-items:start; margin-bottom:.7rem; }
       .pf-skill-row > span:first-child { font-weight:700; color:#0a192f; font-size:.97rem !important; }
       html.dark .pf-skill-row > span:first-child { color:#ccd6f6; }
+      .pf-shots { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:.5rem; margin:.7rem 0 .6rem; }
+      .pf-shots a { display:block; border-radius:.5rem; overflow:hidden; border:1px solid rgba(100,116,139,.25); line-height:0; }
+      .pf-shots a:first-child { grid-row:1 / span 2; }
+      .pf-shots img { width:100%; height:100%; object-fit:cover; object-position:top left; transition:transform .25s; }
+      .pf-shots a:hover img { transform:scale(1.03); }
+      .pf-note { font-size:.85rem !important; color:#64748b !important; display:inline-flex; align-items:center; gap:.4rem; }
+      .pf-date span, .pf-note span { font-size:inherit !important; color:inherit !important; line-height:inherit !important; }
+      .pf-links a.pf-btn-demo { display:inline-flex; align-items:center; gap:.45rem; text-decoration:none; padding:.45rem 1rem; border-radius:.5rem; background:#003380; color:#fff !important; }
+      html.dark .pf-links a.pf-btn-demo { background:#64ffda; color:#0a192f !important; }
+      .pf-links a.pf-btn-demo:hover { filter:brightness(1.1); }
+      .pf-links a.pf-btn-demo, .pf-links a.pf-btn-demo span { font-size:.95rem !important; }
+      @media (max-width:600px) { .pf-shots { grid-template-columns:1fr 1fr; grid-template-rows:auto; } .pf-shots a:first-child { grid-column:1 / span 2; grid-row:auto; } }
       @media (max-width:700px) { #inicio { padding-top:3.8rem !important; } }
       @media (max-width:600px) { .pf-skill-row { grid-template-columns:1fr; gap:.25rem; } .pf-feat { padding:1rem; } }
     </style>
@@ -533,6 +545,24 @@
           <li>Migración de la primera versión de escritorio (Electron + sincronización local/nube con Turso) a una aplicación web accesible desde cualquier dispositivo.</li>
         </ul>
         <div class="pf-chips"><span class="pf-chip">React</span><span class="pf-chip">Vite</span><span class="pf-chip">Tailwind</span><span class="pf-chip">Node.js</span><span class="pf-chip">Express</span><span class="pf-chip">MySQL</span><span class="pf-chip">JWT</span><span class="pf-chip">jsPDF</span><span class="pf-chip">GitHub Actions</span><span class="pf-chip">Electron</span><span class="pf-chip">Turso</span></div>
+      </article>
+
+      <article class="pf-feat">
+        <div class="pf-feat-head"><h3 data-i18n="f4Title">Planificador táctico de ofensivas</h3><span class="pf-date">2026 — <span class="date-present">Actualidad</span></span></div>
+        <span class="pf-tag" data-i18n="f4Tag">En uso real por una tribu de ~25 jugadores · Demo pública</span>
+        <ul data-i18n="f4List">
+          <li>Aplicación web para coordinar ataques masivos en un juego de estrategia online: planifica, asigna y sincroniza cientos de ofensivas de toda una tribu.</li>
+          <li><strong>Motor de asignación</strong> que optimiza moral, distancia y franjas horarias de cada jugador; asistente de 8 pasos para bombardeo, conquista y demolición.</li>
+          <li><strong>Mapa táctico</strong> en canvas con más de 10.000 pueblos y <strong>centro de operaciones en vivo</strong> donde controlador y jugadores marcan sus envíos.</li>
+          <li>Backend FastAPI + MongoDB (23 módulos de API), JWT con roles y accesos temporales por jugador, avisos por WhatsApp y despliegue con Docker. ≈28.000 líneas, 300+ commits.</li>
+        </ul>
+        <div class="pf-shots">
+          <a href="assets/img/proyectos/planificador-inicio.jpg" target="_blank" rel="noopener"><img src="assets/img/proyectos/planificador-inicio.jpg" alt="Centro de mando del planificador con ofensivas, objetivos y mapa táctico" loading="lazy" width="1200" height="737"></a>
+          <a href="assets/img/proyectos/planificador-asistente.jpg" target="_blank" rel="noopener"><img src="assets/img/proyectos/planificador-asistente.jpg" alt="Asistente de creación de plan de ataque en 8 pasos" loading="lazy" width="1200" height="737"></a>
+          <a href="assets/img/proyectos/planificador-mapa.jpg" target="_blank" rel="noopener"><img src="assets/img/proyectos/planificador-mapa.jpg" alt="Mapa del mundo con más de 10.000 pueblos" loading="lazy" width="1200" height="737"></a>
+        </div>
+        <div class="pf-chips"><span class="pf-chip">React</span><span class="pf-chip">JavaScript</span><span class="pf-chip">Python</span><span class="pf-chip">FastAPI</span><span class="pf-chip">MongoDB</span><span class="pf-chip">JWT</span><span class="pf-chip">Canvas</span><span class="pf-chip">Docker</span><span class="pf-chip">Render</span></div>
+        <div class="pf-links" style="align-items:center;"><a class="pf-btn-demo" href="planificador-demo/" target="_blank" rel="noopener"><i class="fas fa-play"></i> <span data-i18n="f4Demo">Probar la demo</span></a><span class="pf-note"><i class="fas fa-lock"></i> <span data-i18n="f4Private">Código privado · disponible bajo petición</span></span></div>
       </article>
 
       <article class="pf-feat">
